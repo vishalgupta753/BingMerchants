@@ -8,10 +8,10 @@ public class AppConstants {
 		ExistingConsumer
 	}
 	
-	public static enum MarchantStatus 
+	public static enum MerchantStatus 
 	{
 		NewMarchant,
-		ExistingMarchant
+		ExistingMerchant
 	}
 	
 	final public static String FileName = "BingConnect.txt";

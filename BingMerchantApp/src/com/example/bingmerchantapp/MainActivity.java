@@ -2,19 +2,18 @@ package com.example.bingmerchantapp;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends ActionBarActivity {
-	
-	public static Context context;
-	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MainActivity.context = getApplicationContext();
         setContentView(R.layout.activity_main);
     }
 
@@ -36,5 +35,11 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    public void gotoMerchantScreen (View view)
+    {
+    	Intent intent = new Intent(this, MerchantSignup.class);
+    	startActivity(intent);
     }
 }
