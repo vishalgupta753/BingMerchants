@@ -1,6 +1,7 @@
 package com.example.bingmerchantapp;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,6 +12,8 @@ import android.view.View;
 public class MainActivity extends ActionBarActivity {
 	
 	public AppConstants.AppStatus myAppStatus; 
+	
+	public static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,17 +43,7 @@ public class MainActivity extends ActionBarActivity {
     
     public void gotoMerchantScreen (View view)
     {
-    	//TODO
-    	//Get app status from the server through REST call
-    	Intent intent;
-    	if (AppConstants.AppStatus.NewUser == this.myAppStatus)
-    	{
-    		intent = new Intent(this, MerchantSignup.class);
-    	}
-    	else
-    	{
-    		intent = new Intent(this, MerchantRequests.class);
-    	}
+    	Intent intent = new Intent(this, MerchantSignup.class);
     	startActivity(intent);
     }
 }

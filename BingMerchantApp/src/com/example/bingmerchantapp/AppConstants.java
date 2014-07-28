@@ -2,10 +2,18 @@ package com.example.bingmerchantapp;
 
 public class AppConstants {
 	
-	public static enum AppStatus 
+	public static enum ConsumerStatus 
 	{
-		NewUser,
-		ExistingUser
+		NewConsumer,
+		ExistingConsumer
 	}
+	
+	public static enum MerchantStatus 
+	{
+		NewMarchant,
+		ExistingMerchant
+	}
+	
+	final public static String FileName = "BingConnect.txt";
 
 }
