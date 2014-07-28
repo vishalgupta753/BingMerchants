@@ -47,13 +47,13 @@ public class MainActivity extends ActionBarActivity {
 	public void gotoMerchantScreen(View view) {
 		Intent intent = null;
 		if (AppUtils.StringIsNullOrEmpty(CurrentUserId) == false) {
-			intent = new Intent(this, MerchantSignup.class);
+			intent = new Intent(this, MerchantRequests.class);
 		} else {
 			AppUtils.SetCuurentUserMerchantStatus();
 			if (CurrentUserMerchantStatus == MerchantStatus.NewMarchant) {
 				intent = new Intent(this, MerchantSignup.class);
 			} else {
-				intent = new Intent(this, MerchantSignup.class);
+				intent = new Intent(this, MerchantRequests.class);
 			}
 		}
 		startActivity(intent);
@@ -62,13 +62,13 @@ public class MainActivity extends ActionBarActivity {
 	public void gotoConsumerScreen(View view) {
 		Intent intent = null;
 		if (AppUtils.StringIsNullOrEmpty(CurrentUserId) == false) {
-			intent = new Intent(this, MerchantSignup.class);
+			intent = new Intent(this, ConsumerVendors.class);
 		} else {
 			AppUtils.SetCuurentUserConsumerStatus();
 			if (CurrentUserConsumerStatus == ConsumerStatus.NewConsumer) {
 				intent = new Intent(this, MerchantSignup.class);
 			} else {
-				intent = new Intent(this, MerchantSignup.class);
+				intent = new Intent(this, ConsumerVendors.class);
 			}
 		}
 		startActivity(intent);

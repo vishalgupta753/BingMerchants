@@ -16,5 +16,8 @@
     <string name="post_query">Send Query</string>
     <string name="orderString">Order&#8230;</string>
     <string name="title_activity_merchant_signup">MerchantSignup</string>
+    <string name="title_activity_merchant_requests">MerchantRequests</string>
+    <string name="title_activity_consumer_signup">ConsumerSignup</string>
+    <string name="title_activity_consumer_vendors">ConsumerVendors</string>
 
 </resources>
