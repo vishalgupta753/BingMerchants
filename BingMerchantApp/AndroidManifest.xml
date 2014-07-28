@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="19"
         android:targetSdkVersion="19" />
 
     <application
@@ -33,6 +33,22 @@
         <activity
             android:name=".MerchantRequests"
             android:label="@string/title_activity_merchant_requests"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.bingmerchantapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ConsumerSignup"
+            android:label="@string/title_activity_consumer_signup"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.bingmerchantapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ConsumerVendors"
+            android:label="@string/title_activity_consumer_vendors"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

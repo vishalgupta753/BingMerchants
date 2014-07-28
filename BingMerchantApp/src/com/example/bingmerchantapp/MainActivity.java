@@ -11,7 +11,8 @@ import android.view.View;
 
 public class MainActivity extends ActionBarActivity {
 	
-	public AppConstants.AppStatus myAppStatus; 
+	public AppConstants.MerchantStatus myAppMerchantStatus; 
+	public AppConstants.ConsumerStatus myConsumerStatus; 
 	
 	public static Context context;
 
@@ -43,7 +44,29 @@ public class MainActivity extends ActionBarActivity {
     
     public void gotoMerchantScreen (View view)
     {
-    	Intent intent = new Intent(this, MerchantSignup.class);
+    	Intent intent;
+    	if (myAppMerchantStatus == AppConstants.MerchantStatus.NewMarchant)
+    	{
+    		intent = new Intent(this, MerchantSignup.class);
+    	}
+    	else
+    	{
+      		intent = new Intent(this, MerchantRequests.class);
+    	}
+    	startActivity(intent);
+    }
+    
+    public void gotoCustomerScreen (View view)
+    {
+    	Intent intent;
+    	if (myConsumerStatus == AppConstants.ConsumerStatus.NewConsumer)
+    	{
+    		intent = new Intent(this, ConsumerSignup.class);
+    	}
+    	else
+    	{
+      		intent = new Intent(this, ConsumerVendors.class);
+    	}
     	startActivity(intent);
     }
 }
