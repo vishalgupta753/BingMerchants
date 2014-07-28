@@ -10,6 +10,8 @@ import android.view.View;
 
 
 public class MainActivity extends ActionBarActivity {
+	
+	public static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
