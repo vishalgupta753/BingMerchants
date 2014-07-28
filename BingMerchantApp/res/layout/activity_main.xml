@@ -10,20 +10,18 @@
 
     <Button
         android:id="@+id/merchantButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignLeft="@+id/customerButton"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="102dp"
         android:layout_marginTop="130dp"
         android:text="@string/merchant" />
 
     <Button
         android:id="@+id/customerButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/merchantButton"
-        android:layout_alignLeft="@+id/merchantButton"
         android:layout_marginBottom="51dp"
         android:text="@string/customer" />
 

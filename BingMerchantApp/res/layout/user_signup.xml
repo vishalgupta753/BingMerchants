@@ -15,7 +15,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/cellphone" />
+        android:inputType="phone"
+        android:hint="@string/cellphone" >
+
+        <requestFocus />
+    </EditText>
 
     <EditText
         android:id="@+id/userAddress"

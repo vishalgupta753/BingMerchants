@@ -4,10 +4,16 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/userMerchantName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Orders..."
-        android:textSize="32dp" />
+        android:text="@string/orderString"
+        android:textSize="32sp" />
+
+    <ProgressBar
+        android:id="@+id/newOrderProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
   
 </TableLayout>

@@ -15,5 +15,10 @@
     <string name="services">Services</string>
     <string name="use_current_location">Use My Current Location</string>
     <string name="submit">Submit</string>
+    <string name="user_query">Send your Query To Marchant</string>
+    <string name="post_query">Send Query</string>
+    <string name="orderString">Order&#8230;</string>
+    
+    
     
 </resources>
