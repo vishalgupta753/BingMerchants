@@ -9,6 +9,8 @@ import android.view.View;
 
 
 public class MainActivity extends ActionBarActivity {
+	
+	public AppConstants.AppStatus myAppStatus; 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,17 @@ public class MainActivity extends ActionBarActivity {
     
     public void gotoMerchantScreen (View view)
     {
-    	Intent intent = new Intent(this, MerchantSignup.class);
+    	//TODO
+    	//Get app status from the server through REST call
+    	Intent intent;
+    	if (AppConstants.AppStatus.NewUser == this.myAppStatus)
+    	{
+    		intent = new Intent(this, MerchantSignup.class);
+    	}
+    	else
+    	{
+    		intent = new Intent(this, MerchantRequests.class);
+    	}
     	startActivity(intent);
     }
 }

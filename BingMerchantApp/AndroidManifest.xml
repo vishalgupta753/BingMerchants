@@ -30,6 +30,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.bingmerchantapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".MerchantRequests"
+            android:label="@string/title_activity_merchant_requests"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.bingmerchantapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
