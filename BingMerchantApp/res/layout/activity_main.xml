@@ -8,9 +8,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.bingmerchantapp.MainActivity" >
 
-    <TextView
+    <Button
+        android:id="@+id/merchantButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="102dp"
+        android:layout_marginTop="130dp"
+        android:text="@string/merchant" />
+
+    <Button
+        android:id="@+id/customerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/merchantButton"
+        android:layout_alignLeft="@+id/merchantButton"
+        android:layout_marginBottom="51dp"
+        android:text="@string/customer" />
 
 </RelativeLayout>
