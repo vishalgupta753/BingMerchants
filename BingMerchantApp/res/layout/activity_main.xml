@@ -15,7 +15,8 @@
         android:layout_alignLeft="@+id/customerButton"
         android:layout_alignParentTop="true"
         android:layout_marginTop="130dp"
-        android:text="@string/merchant" />
+        android:text="@string/merchant" 
+        android:onClick="gotoMerchantScreen"/>
 
     <Button
         android:id="@+id/customerButton"
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/merchantButton"
         android:layout_marginBottom="51dp"
-        android:text="@string/customer" />
+        android:text="@string/customer" 
+        android:onClick="gotoCustomerScreen"/>
 
 </RelativeLayout>
