@@ -54,6 +54,46 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.bingmerchantapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".UserTasks"
+            android:label="@string/title_activity_user_tasks"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.bingmerchantapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MerchantReverts"
+            android:label="@string/title_activity_merchant_reverts" >
+        </activity>
+        <activity
+            android:name=".NewServiceSearch"
+            android:label="@string/title_activity_new_service_search" >
+        </activity>
+        <activity
+            android:name=".RecentServiceReviews"
+            android:label="@string/title_activity_recent_service_reviews" >
+        </activity>
+        <activity
+            android:name=".ConsumerAddVendor"
+            android:label="@string/title_activity_consumer_add_vendor" >
+        </activity>
+        <activity
+            android:name=".ConsumerProfile"
+            android:label="@string/title_activity_consumer_profile" >
+        </activity>
+        <activity
+            android:name=".MerchantListActivity"
+            android:label="@string/title_merchant_list" >
+        </activity>
+        <activity
+            android:name=".MerchantDetailActivity"
+            android:label="@string/title_merchant_detail"
+            android:parentActivityName=".MerchantListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.bingmerchantapp.MerchantListActivity" />
+        </activity>
     </application>
 
 </manifest>

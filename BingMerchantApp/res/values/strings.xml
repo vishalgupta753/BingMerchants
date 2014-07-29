@@ -19,5 +19,20 @@
     <string name="title_activity_merchant_requests">MerchantRequests</string>
     <string name="title_activity_consumer_signup">ConsumerSignup</string>
     <string name="title_activity_consumer_vendors">ConsumerVendors</string>
+    <string name="title_activity_user_tasks">UserTasks</string>
+    <string name="button_merchant_revert">Service notifications</string>
+    <string name="button_new_service">Request for a service</string>
+    <string name="button_add_vendor">Add a vendor</string>
+    <string name="button_recent_services">Review recent services</string>
+    <string name="button_my_profile">My Profile</string>
+    <string name="title_activity_merchant_reverts">MerchantReverts</string>
+    <string name="title_activity_new_service_search">NewServiceSearch</string>
+    <string name="title_activity_recent_service_reviews">RecentServiceReviews</string>
+    <string name="title_activity_consumer_add_vendor">ConsumerAddVendor</string>
+    <string name="title_activity_consumer_profile">ConsumerProfile</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="title_merchant_list">Mechants</string>
+    <string name="title_merchant_detail">Merchant Detail</string>
+    <string name="search_service">Search Service</string>
 
 </resources>
