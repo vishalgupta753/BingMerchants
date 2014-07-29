@@ -16,7 +16,8 @@ public class MainActivity extends ActionBarActivity {
 	public static Context context;
 	public static ConsumerStatus CurrentUserConsumerStatus;
 	public static MerchantStatus CurrentUserMerchantStatus;
-	public static String CurrentUserId;
+	public static String CurrentMerchantUserId;
+	public static String CurrentConsumerUserId;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,23 +46,25 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	public void gotoMerchantScreen(View view) {
-		Intent intent = null;
-		if (AppUtils.StringIsNullOrEmpty(CurrentUserId) == false) {
-			intent = new Intent(this, MerchantRequests.class);
-		} else {
-			AppUtils.SetCuurentUserMerchantStatus();
-			if (CurrentUserMerchantStatus == MerchantStatus.NewMarchant) {
-				intent = new Intent(this, MerchantSignup.class);
-			} else {
-				intent = new Intent(this, MerchantRequests.class);
-			}
-		}
-		startActivity(intent);
+//		//AppUtils.SaveLocalUserId("");
+//		Intent intent = null;
+//		if (AppUtils.StringIsNullOrEmpty(CurrentMerchantUserId) == false) {
+//			intent = new Intent(this, MerchantRequests.class);
+//		} else {
+//			AppUtils.SetCuurentUserMerchantStatus();
+//			if (CurrentUserMerchantStatus == MerchantStatus.NewMarchant) {
+//				intent = new Intent(this, MerchantSignup.class);
+//			} else {
+//				intent = new Intent(this, MerchantRequests.class);
+//			}
+//		}
+//		startActivity(intent);
 	}
 	
 	public void gotoConsumerScreen(View view) {
+		//AppUtils.SaveLocalUserId("");
 		Intent intent = null;
-		if (AppUtils.StringIsNullOrEmpty(CurrentUserId) == false) {
+		if (AppUtils.StringIsNullOrEmpty(CurrentConsumerUserId) == false) {
 			intent = new Intent(this, ConsumerVendors.class);
 		} else {
 			AppUtils.SetCuurentUserConsumerStatus();
