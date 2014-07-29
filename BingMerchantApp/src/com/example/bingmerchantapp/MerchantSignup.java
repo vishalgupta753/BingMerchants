@@ -1,5 +1,6 @@
 package com.example.bingmerchantapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -102,13 +103,13 @@ public class MerchantSignup extends ActionBarActivity {
 		editText = (EditText)findViewById(R.id.merchantZipcode);
 		String merchantAddress = editText.getText().toString();
 		
-		//CheckBox checkBox = (CheckBox)findViewById(R.id.merchantUseLocation);
-		//boolean useCurrentLocation = checkBox.isChecked();
+		CheckBox checkBox = (CheckBox)findViewById(R.id.merchantUseLocation);
+		boolean useCurrentLocation = checkBox.isChecked();
 		
 		AppUtils.SaveNewMerchant(merchantName, merchantAddress, "", merchantCellphone, merchantServices);
 		AppUtils.SaveLocalUserId(merchantCellphone, "m");
 		
-//		Intent intent = new Intent(this, MerchantRequests.class);
-//		startActivity(intent);
+		Intent intent = new Intent(this, MerchantListActivity.class);
+		startActivity(intent);
 	}
 }
