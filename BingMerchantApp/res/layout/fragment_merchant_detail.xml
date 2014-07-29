@@ -8,25 +8,42 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.bingmerchantapp.SendQuery" >
 
-    <TextView
-        android:id="@+id/queryPageMerchantName"
+    <LinearLayout
+        android:id="@+id/merchantDetailsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/merchant"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignParentTop="true" >
+
+        <TextView
+            android:id="@+id/queryPageMerchantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/merchant"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/sendQueryCellPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/queryPageMerchantName"
-        android:layout_alignRight="@+id/queryPageMerchantName"
-        android:layout_below="@+id/queryPageMerchantName"
+        android:layout_alignLeft="@+id/merchantDetailsHeader"
+        android:layout_alignRight="@+id/merchantDetailsHeader"
+        android:layout_below="@+id/merchantDetailsHeader"
         android:layout_marginTop="18dp"
         android:text="@string/cellphone"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/queryPageMerchantDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sendQueryCellPhone"
+        android:layout_alignRight="@+id/sendQueryCellPhone"
+        android:layout_below="@+id/sendQueryCellPhone"
+        android:layout_marginTop="18dp"
+        android:text="@string/services"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
@@ -34,22 +51,12 @@
         android:layout_width="wrap_content"
         android:layout_height="180dp"
         android:layout_above="@+id/sendQuerySubmit"
-        android:layout_alignLeft="@+id/sendQueryCellPhone"
-        android:layout_alignRight="@+id/sendQueryMerchantAddress"
-        android:layout_below="@+id/sendQueryMerchantAddress"
+        android:layout_alignLeft="@+id/queryPageMerchantDetails"
+        android:layout_alignRight="@+id/queryPageMerchantDetails"
+        android:layout_below="@+id/queryPageMerchantDetails"
         android:ems="10"
         android:hint="@string/search_service"
         android:inputType="textMultiLine" />
-
-    <TextView
-        android:id="@+id/sendQueryMerchantAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/sendQueryCellPhone"
-        android:layout_alignRight="@+id/sendQueryCellPhone"
-        android:layout_below="@+id/sendQueryCellPhone"
-        android:layout_marginTop="18dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/sendQuerySubmit"
@@ -62,6 +69,3 @@
         android:text="@string/submit" />
 
 </RelativeLayout>
-
-
-

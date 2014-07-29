@@ -99,10 +99,8 @@ public class MerchantSignup extends ActionBarActivity {
 	{
 		EditText editText = (EditText) findViewById(R.id.merchantName);
 		String merchantName = editText.getText().toString();
-		
 		editText = (EditText)findViewById(R.id.merchantServices);
 		String merchantServices = editText.getText().toString();
-		
 		editText = (EditText)findViewById(R.id.merchantCellphone);
 		String merchantCellphone = editText.getText().toString();
 		
@@ -129,6 +127,8 @@ public class MerchantSignup extends ActionBarActivity {
 		CheckBox checkBox = (CheckBox)findViewById(R.id.isMerchantCheckbox);
 		boolean isMerchantCheckbox = checkBox.isChecked();
 		
+		checkBox = (CheckBox)findViewById(R.id.merchantUseLocation);
+		boolean useCurrentLocation = checkBox.isChecked();
 		Intent intent;
 		if(isMerchantCheckbox)
 		{

@@ -29,7 +29,7 @@ public class SendQuery extends Activity {
 		TextView cellPhone = (TextView) findViewById(R.id.sendQueryCellPhone);
 		cellPhone.setText(merchant.getPhone());
 		
-		TextView address = (TextView) findViewById(R.id.sendQueryMerchantAddress);
+		TextView address = (TextView) findViewById(R.id.queryPageMerchantDetails);
 		address.setText(merchant.getAddress());
 	}
 
