@@ -339,7 +339,7 @@ public class AppUtils {
 					
 					//message.setConsumer(new Consumer(consumerId, name, phone, address));
 					message.setMerchant(new Merchant());
-					message.getMerchant().setMerchantId(MainActivity.CurrentUserId);
+					message.getMerchant().setMerchantId(messageJson.getString("VendorID"));
 					message.setMessage(messageJson.getString("Content"));
 					message.setMessageId(messageJson.getString("MessageID"));
 					
