@@ -54,12 +54,12 @@ public class SendQuery extends Activity {
 	}
 
 	public void SendQueryToConsumer() {
-		EditText query = (EditText) findViewById(R.id.consumerQuery);
-		String consumerQuery = query.getText().toString();
-		if (AppUtils.StringIsNullOrEmpty(consumerQuery) == false)
-			AppUtils.SendQueryToMerchant(merchant, query.getText().toString());
-		
-		Intent intent = new Intent(this, SearchQuery.class);
-		startActivity(intent);
+//		EditText query = (EditText) findViewById(R.id.consumerQuery);
+//		String consumerQuery = query.getText().toString();
+//		if (AppUtils.StringIsNullOrEmpty(consumerQuery) == false)
+//			AppUtils.SendQueryToMerchant(merchant, query.getText().toString());
+//		
+//		Intent intent = new Intent(this, SearchQuery.class);
+//		startActivity(intent);
 	}
 }

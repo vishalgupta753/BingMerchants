@@ -80,15 +80,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.bingmerchantapp.InputFieldListActivity" />
         </activity>
-        <activity
-            android:name=".Signup"
-            android:label="@string/title_activity_signup"
-            android:parentActivityName=".MainActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.bingmerchantapp.MainActivity" />
-        </activity>
 
     </application>
 
