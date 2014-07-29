@@ -23,6 +23,7 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		MainActivity.context = getApplicationContext();
 		AppUtils.CheckLocalSavedUserId();
 		Intent intent = null;
@@ -30,7 +31,7 @@ public class MainActivity extends ActionBarActivity {
 		{
 			if(CurrentUserEnv.equals(AppConstants.DefaultAppEnv))
 			{
-				//intent = new Intent(this, MerchantSignup.class);
+				intent = new Intent(this, MerchantListActivity.class);
 			}
 			else
 			{
@@ -43,6 +44,16 @@ public class MainActivity extends ActionBarActivity {
 		}
 		startActivity(intent);
 	}
+	
+	
+
+	@Override
+	protected void onPostResume() {
+		// TODO Auto-generated method stub
+		super.onPostResume();
+	}
+
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

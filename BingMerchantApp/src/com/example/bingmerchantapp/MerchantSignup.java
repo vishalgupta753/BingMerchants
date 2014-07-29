@@ -134,7 +134,7 @@ public class MerchantSignup extends ActionBarActivity {
 		{
 			Merchant merchant = new Merchant(merchantCellphone, merchantName, merchantCellphone, address, businessName, merchantServices, "", false);
 			AppUtils.SaveNewMerchant(merchant);
-			
+			// correct it
 			intent = new Intent(this, MerchantListActivity.class);
 			MainActivity.CurrentUserEnv="Merchant";
 		}

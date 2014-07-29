@@ -6,11 +6,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -18,6 +21,9 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.content.Context;
 import android.os.StrictMode;
@@ -245,6 +251,59 @@ public class AppUtils {
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
+	}
+	
+	public static ArrayList<Merchant> GetAllMerchants()
+	{
+		ArrayList<Merchant> merchantList = new ArrayList<Merchant>();
+		// Create a new HttpClient and Post Header
+	    HttpClient httpclient = new DefaultHttpClient();
+	    HttpPost httppost = new HttpPost(AppConstants.HttpUrl+"GetVendors.php");
+
+	    try {
+	    	System.out.println("in getAll merchants funtion");
+	        // Add your data
+	        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+	        httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+	        // Execute HTTP Post Request
+	        StrictMode.ThreadPolicy policy = new StrictMode.
+	                ThreadPolicy.Builder().permitAll().build();
+	        StrictMode.setThreadPolicy(policy); 
+	        HttpResponse response = httpclient.execute(httppost);
+	        String responseStr = "",inputLine ;
+	        BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+	              while ((inputLine = in.readLine()) != null) {
+	                     responseStr=inputLine;
+	              }
+	              in.close();
+	              
+	        try {
+				JSONArray responseJSONArray = new JSONArray(responseStr);
+				for(int i=0;i<responseJSONArray.length();i++)
+				{
+					JSONObject merchantJson = responseJSONArray.getJSONObject(i);
+					Merchant merchant = new Merchant(merchantJson.getString("VendorID"),
+							merchantJson.getString("VendorName"),
+							merchantJson.getString("PhoneNumber"),
+							merchantJson.getString("Address"),
+							merchantJson.getString("BusinessName"),
+							merchantJson.getString("Tags"),
+							merchantJson.getString("GeoLocation"),
+							false);
+					merchantList.add(merchant);
+				}
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        
+	    } catch (ClientProtocolException e) {
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	    return merchantList;
 	}
 	
 	public static ArrayList<Message> GetOpenQueriesForMerchant()
