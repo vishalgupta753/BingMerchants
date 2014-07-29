@@ -19,27 +19,22 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
-import com.example.bingmerchantapp.AppConstants.ConsumerStatus;
-import com.example.bingmerchantapp.AppConstants.MerchantStatus;
+import android.content.Context;
+import android.os.StrictMode;
+
 import com.example.bingmerchantapp.data.Consumer;
 import com.example.bingmerchantapp.data.Merchant;
 import com.example.bingmerchantapp.data.Message;
 
-import android.content.Context;
-import android.os.StrictMode;
-
 public class AppUtils {
 
-	public static String GetLocalSavedUserId() {
-		String userId = null;
-		String defaultRole = "Consumer";
+	public static void CheckLocalSavedUserId() {
 		InputStreamReader inputStreamReader = null;
 
 		File file = MainActivity.context
 				.getFileStreamPath(AppConstants.FileName);
 		if (file != null && file.exists()) {
 			try {
-				System.out.println("Inside If of GetLocalSavedUserId");
 				FileInputStream in = MainActivity.context
 						.openFileInput(AppConstants.FileName);
 				inputStreamReader = new InputStreamReader(in);
@@ -48,16 +43,14 @@ public class AppUtils {
 				StringBuilder sb = new StringBuilder();
 				String line;
 				while ((line = bufferedReader.readLine()) != null) {
-					System.out.println("Inside For loop: "+ line);
 					sb.append(line);
 				}
 				String[] tokens = sb.toString().split(":");
 				if (tokens.length == 2)
 				{
-					userId = tokens[0];
-					defaultRole = tokens[1]=="c"?"Consumer":"Merchant";
+					MainActivity.CurrentUserId = tokens[0];
+					MainActivity.CurrentUserEnv = tokens[1].equals("c")?"Consumer":"Merchant";
 				}
-				System.out.println("GetLocalSavedUserId Completes: "+ userId);
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
@@ -72,8 +65,6 @@ public class AppUtils {
 				}
 			}
 		}
-
-		return userId;
 	}
 	
 	//defaultRole will be c or m. 
@@ -113,30 +104,30 @@ public class AppUtils {
 	
 	public static void SetCuurentUserMerchantStatus()
 	{
-		String userId = GetLocalSavedUserId();
-		if (AppUtils.StringIsNullOrEmpty(userId) || AppUtils.checkIfMerchantExits(userId)== false) {
-			
-			 MainActivity.CurrentUserMerchantStatus = MerchantStatus.NewMarchant;
-		}
-		else
-		{
-			MainActivity.CurrentUserMerchantStatus = MerchantStatus.ExistingMerchant;
-			MainActivity.CurrentMerchantUserId = userId;
-		}
+//		String userId = GetLocalSavedUserId();
+//		if (AppUtils.StringIsNullOrEmpty(userId) || AppUtils.checkIfMerchantExits(userId)== false) {
+//			
+//			 MainActivity.CurrentUserMerchantStatus = MerchantStatus.NewMarchant;
+//		}
+//		else
+//		{
+//			MainActivity.CurrentUserMerchantStatus = MerchantStatus.ExistingMerchant;
+//			MainActivity.CurrentMerchantUserId = userId;
+//		}
 	}
 	
 	public static void SetCuurentUserConsumerStatus()
 	{
-		String userId = GetLocalSavedUserId();
-		if (AppUtils.StringIsNullOrEmpty(userId) || AppUtils.checkIfConsumerExits(userId)== false) {
-			
-			 MainActivity.CurrentUserConsumerStatus = ConsumerStatus.NewConsumer;
-		}
-		else
-		{
-			MainActivity.CurrentUserConsumerStatus = ConsumerStatus.ExistingConsumer;
-			MainActivity.CurrentConsumerUserId = userId;
-		}
+//		String userId = GetLocalSavedUserId();
+//		if (AppUtils.StringIsNullOrEmpty(userId) || AppUtils.checkIfConsumerExits(userId)== false) {
+//			
+//			 MainActivity.CurrentUserConsumerStatus = ConsumerStatus.NewConsumer;
+//		}
+//		else
+//		{
+//			MainActivity.CurrentUserConsumerStatus = ConsumerStatus.ExistingConsumer;
+//			MainActivity.CurrentConsumerUserId = userId;
+//		}
 	}
 	
 	public static Boolean checkIfMerchantExits(String mid)

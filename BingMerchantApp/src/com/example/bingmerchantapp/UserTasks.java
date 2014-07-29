@@ -1,7 +1,5 @@
 package com.example.bingmerchantapp;
 
-import com.example.bingmerchantapp.AppConstants.ConsumerStatus;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

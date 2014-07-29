@@ -15,5 +15,7 @@ public class AppConstants {
 	}
 	
 	final public static String FileName = "BingConnect.txt";
+	
+	final public static String DefaultAppEnv = "Consumer";
 
 }

@@ -1,14 +1,13 @@
 package com.example.bingmerchantapp;
 
-import com.example.bingmerchantapp.data.Merchant;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.bingmerchantapp.data.Merchant;
 
 public class SendQuery extends Activity {
 

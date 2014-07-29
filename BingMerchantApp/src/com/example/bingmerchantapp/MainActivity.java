@@ -1,15 +1,14 @@
 package com.example.bingmerchantapp;
 
-import com.example.bingmerchantapp.AppConstants.ConsumerStatus;
-import com.example.bingmerchantapp.AppConstants.MerchantStatus;
-
-import android.support.v7.app.ActionBarActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+
+import com.example.bingmerchantapp.AppConstants.ConsumerStatus;
+import com.example.bingmerchantapp.AppConstants.MerchantStatus;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -18,12 +17,31 @@ public class MainActivity extends ActionBarActivity {
 	public static MerchantStatus CurrentUserMerchantStatus;
 	public static String CurrentMerchantUserId;
 	public static String CurrentConsumerUserId;
+	public static String CurrentUserId;
+	public static String CurrentUserEnv;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		MainActivity.context = getApplicationContext();
-		setContentView(R.layout.activity_main);
+		AppUtils.CheckLocalSavedUserId();
+		Intent intent = null;
+		if(AppUtils.StringIsNullOrEmpty(CurrentUserId) == false)
+		{
+			if(CurrentUserEnv.equals(AppConstants.DefaultAppEnv))
+			{
+				//intent = new Intent(this, MerchantSignup.class);
+			}
+			else
+			{
+				intent = new Intent(this, MerchantListActivity.class);
+			}
+		}
+		else
+		{
+			intent = new Intent(this, MerchantSignup.class);
+		}
+		startActivity(intent);
 	}
 
 	@Override
@@ -43,37 +61,5 @@ public class MainActivity extends ActionBarActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	public void gotoMerchantScreen(View view) {
-//		//AppUtils.SaveLocalUserId("");
-//		Intent intent = null;
-//		if (AppUtils.StringIsNullOrEmpty(CurrentMerchantUserId) == false) {
-//			intent = new Intent(this, MerchantRequests.class);
-//		} else {
-//			AppUtils.SetCuurentUserMerchantStatus();
-//			if (CurrentUserMerchantStatus == MerchantStatus.NewMarchant) {
-//				intent = new Intent(this, MerchantSignup.class);
-//			} else {
-//				intent = new Intent(this, MerchantRequests.class);
-//			}
-//		}
-//		startActivity(intent);
-	}
-	
-	public void gotoConsumerScreen(View view) {
-		//AppUtils.SaveLocalUserId("");
-		Intent intent = null;
-		if (AppUtils.StringIsNullOrEmpty(CurrentConsumerUserId) == false) {
-			intent = new Intent(this, ConsumerVendors.class);
-		} else {
-			AppUtils.SetCuurentUserConsumerStatus();
-			if (CurrentUserConsumerStatus == ConsumerStatus.NewConsumer) {
-				intent = new Intent(this, MerchantSignup.class);
-			} else {
-				intent = new Intent(this, ConsumerVendors.class);
-			}
-		}
-		startActivity(intent);
 	}
 }
