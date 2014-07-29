@@ -1,5 +1,7 @@
 package com.example.bingmerchantapp;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.app.ListFragment;
@@ -7,7 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.bingmerchantapp.datastore.VendorContent;
+import com.example.bingmerchantapp.data.Merchant;
 
 /**
  * A list fragment representing a list of Mechants. This fragment also supports
@@ -71,9 +73,13 @@ public class MerchantListFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 
 		// TODO: replace with a real list adapter.
-		setListAdapter(new ArrayAdapter<VendorContent.VendorItem>(getActivity(),
+		ArrayList<Merchant> merchantData = AppUtils.GetAllMerchants();
+		for (Merchant merchant : merchantData) {
+			Merchant.addItem(merchant);
+		}
+		setListAdapter(new ArrayAdapter<Merchant>(getActivity(),
 				android.R.layout.simple_list_item_activated_1,
-				android.R.id.text1, VendorContent.ITEMS));
+				android.R.id.text1, Merchant.ITEMS));
 	}
 
 	@Override
@@ -116,7 +122,7 @@ public class MerchantListFragment extends ListFragment {
 
 		// Notify the active callbacks interface (the activity, if the
 		// fragment is attached to one) that an item has been selected.
-		mCallbacks.onItemSelected(VendorContent.ITEMS.get(position).getMerchantId());
+		mCallbacks.onItemSelected(Merchant.ITEMS.get(position).getMerchantId());
 	}
 
 	@Override

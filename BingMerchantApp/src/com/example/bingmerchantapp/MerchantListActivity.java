@@ -35,8 +35,6 @@ public class MerchantListActivity extends Activity implements
 	 */
 	private boolean mTwoPane;
 	
-	private ArrayList<Merchant> merchantList = new ArrayList<Merchant>();
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
