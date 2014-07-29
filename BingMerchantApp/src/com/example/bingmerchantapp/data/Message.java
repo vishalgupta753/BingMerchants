@@ -11,7 +11,16 @@ public class Message {
 	private Merchant merchant;
 	private String message;
 	private String messageId;
+	private String messageStatus;
 	
+	public String getMessageStatus() {
+		return messageStatus;
+	}
+
+
+	public void setMessageStatus(String messageStatus) {
+		this.messageStatus = messageStatus;
+	}
 	/**
 	 * An array of sample (dummy) items.
 	 */

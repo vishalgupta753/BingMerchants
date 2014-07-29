@@ -7,9 +7,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.bingmerchantapp.AppConstants.ConsumerStatus;
-import com.example.bingmerchantapp.AppConstants.MerchantStatus;
-
 public class MainActivity extends ActionBarActivity {
 
 	public static Context context;

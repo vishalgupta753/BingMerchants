@@ -337,11 +337,21 @@ public class AppUtils {
 					JSONObject messageJson = responseJSONArray.getJSONObject(i);
 					Message message = new Message();
 					
-					//message.setConsumer(new Consumer(consumerId, name, phone, address));
-					message.setMerchant(new Merchant());
-					message.getMerchant().setMerchantId(messageJson.getString("VendorID"));
-					message.setMessage(messageJson.getString("Content"));
+					message.setConsumer(new Consumer(messageJson.getString("UserID"),
+							messageJson.getString("Username"),
+							messageJson.getString("userPhone"),
+							messageJson.getString("userAddress")));
+					message.setMerchant(new Merchant(messageJson.getString("VendorID"),
+							messageJson.getString("VendorName"),
+							messageJson.getString("VendorPhone"),
+							messageJson.getString("vendorAddress"),
+							messageJson.getString("BusinessName"),
+							messageJson.getString("Tags"),
+							"",
+							false));
+					message.setMessage(messageJson.getString("messageContent"));
 					message.setMessageId(messageJson.getString("MessageID"));
+					message.setMessageStatus(messageJson.getString("messageStatus"));
 					
 					messageData.add(message);
 				}
@@ -358,4 +368,70 @@ public class AppUtils {
 		
 		return messageData;
 	}
+	
+	public static ArrayList<Message> GetOpenQueriesForMerchant()
+    {
+          ArrayList<Message> messageData = new ArrayList<Message>();
+          
+          // Create a new HttpClient and Post Header
+        HttpClient httpclient = new DefaultHttpClient();
+        HttpPost httppost = new HttpPost(AppConstants.HttpUrl+"GetMessages.php");
+
+        try {
+            // Add your data
+            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+            nameValuePairs.add(new BasicNameValuePair("VenderID", "M_"+MainActivity.CurrentUserId));
+            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+            // Execute HTTP Post Request
+            StrictMode.ThreadPolicy policy = new StrictMode.
+                    ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy); 
+            HttpResponse response = httpclient.execute(httppost);
+            String responseStr = "",inputLine ;
+            BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+                  while ((inputLine = in.readLine()) != null) {
+                         responseStr=inputLine;
+                  }
+                  in.close();
+                  
+            try {
+                      JSONArray responseJSONArray = new JSONArray(responseStr);
+                      for(int i=0;i<responseJSONArray.length();i++)
+                      {
+                            JSONObject messageJson = responseJSONArray.getJSONObject(i);
+                            Message message = new Message();
+                            
+                            message.setConsumer(new Consumer(messageJson.getString("UserID"),
+                                        messageJson.getString("Username"),
+                                        messageJson.getString("userPhone"),
+                                        messageJson.getString("userAddress")));
+                            message.setMerchant(new Merchant(messageJson.getString("VendorID"),
+                                        messageJson.getString("VendorName"),
+                                        messageJson.getString("VendorPhone"),
+                                        messageJson.getString("vendorAddress"),
+                                        messageJson.getString("BusinessName"),
+                                        messageJson.getString("Tags"),
+                                        "",
+                                        false));
+                            message.setMessage(messageJson.getString("messageContent"));
+                            message.setMessageId(messageJson.getString("MessageID"));
+                            message.setMessageStatus(messageJson.getString("messageStatus"));
+                            
+                            messageData.add(message);
+                      }
+                } catch (JSONException e) {
+                      // TODO Auto-generated catch block
+                      e.printStackTrace();
+                }
+            
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+          
+          return messageData;
+    }
+
 }

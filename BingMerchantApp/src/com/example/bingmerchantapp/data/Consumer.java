@@ -14,6 +14,14 @@ public class Consumer {
 		Address = address;
 	}
 	
+	
+	
+	public Consumer() {
+		super();
+	}
+
+
+
 	public String getConsumerId() {
 		return consumerId;
 	}

@@ -1,7 +1,7 @@
 package com.example.bingmerchantapp;
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +56,7 @@ public class ConsumerRequestDetailFragment extends Fragment {
 
 		// Show the dummy content as text in a TextView.
 		if (mItem != null) {
-				((TextView) rootView.findViewById(R.id.queryPageMerchantName))
+				((TextView) rootView.findViewById(R.id.customerRequestMerchantName))
 				.setText(mItem.getMerchant().toString());
 				((TextView) rootView.findViewById(R.id.merchantCellPhone))
 				.setText(mItem.getMerchant().getPhone());
@@ -81,7 +81,6 @@ public class ConsumerRequestDetailFragment extends Fragment {
 				
 				((TextView) rootView.findViewById(R.id.merchantStatus))
 				.setText(messageStatus);
-				
 				
 				ConsumerRequestDetailActivity.message = mItem;
 		}
