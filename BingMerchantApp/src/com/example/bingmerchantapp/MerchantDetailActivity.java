@@ -1,10 +1,14 @@
 package com.example.bingmerchantapp;
 
+import com.example.bingmerchantapp.data.Merchant;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 /**
  * An activity representing a single Merchant detail screen. This activity is
@@ -17,6 +21,8 @@ import android.view.MenuItem;
  */
 public class MerchantDetailActivity extends Activity {
 
+	public static Merchant merchant;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -61,5 +67,15 @@ public class MerchantDetailActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	public void SendQueryToConsumer(View view) {
+		EditText query = (EditText) findViewById(R.id.consumerQuery);
+		String consumerQuery = query.getText().toString();
+		if (AppUtils.StringIsNullOrEmpty(consumerQuery) == false)
+			AppUtils.SendQueryToMerchant(merchant, query.getText().toString());
+		
+		Intent intent = new Intent(this, MerchantListActivity.class);
+		startActivity(intent);
 	}
 }

@@ -1,13 +1,13 @@
 package com.example.bingmerchantapp;
 
-import com.example.bingmerchantapp.data.Merchant;
-
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.bingmerchantapp.data.Merchant;
 
 
 /**
@@ -61,6 +61,7 @@ public class MerchantDetailFragment extends Fragment {
 			.setText(mItem.getPhone());
 			((TextView) rootView.findViewById(R.id.queryPageMerchantDetails))
 			.setText(mItem.getAddress());
+			MerchantDetailActivity.merchant = mItem;
 		}
 
 		return rootView;

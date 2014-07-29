@@ -1,42 +1,25 @@
 package com.example.bingmerchantapp;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-
 import com.example.bingmerchantapp.data.Merchant;
 
 public class SendQuery extends Activity {
 
-	private Merchant merchant;
+	public static Merchant merchant;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.activity_send_query);
-	}
-
-	public void SetPortalData() {
-		Intent intent = getIntent();
-		merchant = (Merchant) intent.getParcelableExtra("MerchantData");
-
-		TextView name = (TextView) findViewById(R.id.queryPageMerchantName);
-		name.setText(merchant.getName());
-
-		TextView cellPhone = (TextView) findViewById(R.id.sendQueryCellPhone);
-		cellPhone.setText(merchant.getPhone());
-		
-		TextView address = (TextView) findViewById(R.id.queryPageMerchantDetails);
-		address.setText(merchant.getAddress());
+		setContentView(R.layout.activity_send_query);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-//		getMenuInflater().inflate(R.menu.send_query, menu);
+		getMenuInflater().inflate(R.menu.send_query, menu);
 		return true;
 	}
 
@@ -52,13 +35,4 @@ public class SendQuery extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void SendQueryToConsumer() {
-//		EditText query = (EditText) findViewById(R.id.consumerQuery);
-//		String consumerQuery = query.getText().toString();
-//		if (AppUtils.StringIsNullOrEmpty(consumerQuery) == false)
-//			AppUtils.SendQueryToMerchant(merchant, query.getText().toString());
-//		
-//		Intent intent = new Intent(this, SearchQuery.class);
-//		startActivity(intent);
-	}
 }

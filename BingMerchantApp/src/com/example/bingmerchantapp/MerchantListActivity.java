@@ -1,14 +1,10 @@
 package com.example.bingmerchantapp;
 
-import java.util.ArrayList;
-
-import com.example.bingmerchantapp.data.Merchant;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.app.Activity;
 
 /**
  * An activity representing a list of Mechants. This activity has different

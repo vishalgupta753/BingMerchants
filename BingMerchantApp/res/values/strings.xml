@@ -55,6 +55,7 @@
     <string name="signup_business_name_hint">Business Name</string>
     <string name="title_inputfield_list">InputFields</string>
     <string name="title_inputfield_detail">InputField Detail</string>
+    <string name="switchMode">Switch Mode</string>
     <string name="title_merchantrequest_list">MerchantRequests</string>
     <string name="title_merchantrequest_detail">MerchantRequest Detail</string>
     <string name="accept_requests">Accept Request</string>

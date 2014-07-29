@@ -14,7 +14,7 @@ public class Merchant {
 	private String Phone;
 	private String Address;
 	private String BusinessName;
-	private ArrayList<String> Services;
+	private String Services;
 	private String GeoLocation;
 	private Boolean IsFavouriteMerchant;
 	
@@ -56,10 +56,7 @@ public class Merchant {
 		Phone = phone;
 		Address = address;
 		BusinessName = businessName;
-		Services = new ArrayList<String>();
-		for (String str : services.split(",")) {
-			Services.add(str);
-		}
+		Services = services;
 		GeoLocation = geoLocation;
 		IsFavouriteMerchant = isFavouriteMerchant;
 	}
@@ -93,10 +90,10 @@ public class Merchant {
 	public void setBusinessName(String businessName) {
 		BusinessName = businessName;
 	}
-	public ArrayList<String> getServices() {
+	public String getServices() {
 		return Services;
 	}
-	public void setServices(ArrayList<String> services) {
+	public void setServices(String services) {
 		Services = services;
 	}
 	public String getGeoLocation() {
