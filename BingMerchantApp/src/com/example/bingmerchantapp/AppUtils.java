@@ -232,8 +232,8 @@ public class AppUtils {
 	    try {
 	        // Add your data
 	        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-	        nameValuePairs.add(new BasicNameValuePair("VendorID", merchant.getPhone()));
-	        nameValuePairs.add(new BasicNameValuePair("UserID", MainActivity.CurrentConsumerUserId));
+	        nameValuePairs.add(new BasicNameValuePair("VendorID", "M_" + merchant.getPhone()));
+	        nameValuePairs.add(new BasicNameValuePair("UserID", "C_" + MainActivity.CurrentUserId));
 	        nameValuePairs.add(new BasicNameValuePair("Content", query));
 	        nameValuePairs.add(new BasicNameValuePair("Status", "o"));
 	        httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
@@ -304,23 +304,57 @@ public class AppUtils {
 	    return merchantList;
 	}
 	
-	public static ArrayList<Message> GetOpenQueriesForMerchant()
+	public static ArrayList<Message> GetOpenQueriesForCurrentUser()
 	{
 		ArrayList<Message> messageData = new ArrayList<Message>();
 		
-//		Message m1 = new Message();
-//		Consumer c1 = new Consumer("JB Kiryana", "123456789", "Gachibowli"); 
-//		m1.setConsumer(c1);
-//		m1.setMessageId("34567");
-//		m1.setMessage("Need Following groceries intems by 5pm");
-//		
-//		Message m2 = new Message(); 
-//		m2.setConsumer(c1);
-//		m2.setMessageId("34568");
-//		m2.setMessage("Need Following groceries intems by 5pm");
-//		
-//		messageData.add(m1);
-//		messageData.add(m2);
+		// Create a new HttpClient and Post Header
+	    HttpClient httpclient = new DefaultHttpClient();
+	    HttpPost httppost = new HttpPost(AppConstants.HttpUrl+"GetMessages.php");
+
+	    try {
+	        // Add your data
+	        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+	        nameValuePairs.add(new BasicNameValuePair("UserID", "C_"+MainActivity.CurrentUserId));
+	        httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+	        // Execute HTTP Post Request
+	        StrictMode.ThreadPolicy policy = new StrictMode.
+	                ThreadPolicy.Builder().permitAll().build();
+	        StrictMode.setThreadPolicy(policy); 
+	        HttpResponse response = httpclient.execute(httppost);
+	        String responseStr = "",inputLine ;
+	        BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+	              while ((inputLine = in.readLine()) != null) {
+	                     responseStr=inputLine;
+	              }
+	              in.close();
+	              
+	        try {
+				JSONArray responseJSONArray = new JSONArray(responseStr);
+				for(int i=0;i<responseJSONArray.length();i++)
+				{
+					JSONObject messageJson = responseJSONArray.getJSONObject(i);
+					Message message = new Message();
+					
+					//message.setConsumer(new Consumer(consumerId, name, phone, address));
+					message.setMerchant(new Merchant());
+					message.getMerchant().setMerchantId(MainActivity.CurrentUserId);
+					message.setMessage(messageJson.getString("Content"));
+					message.setMessageId(messageJson.getString("MessageID"));
+					
+					messageData.add(message);
+				}
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        
+	    } catch (ClientProtocolException e) {
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 		
 		return messageData;
 	}

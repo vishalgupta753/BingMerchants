@@ -68,6 +68,10 @@ public class MerchantListActivity extends Activity implements
 		if (id == R.id.action_settings) {
 			return true;
 		}
+		if(id == R.id.action_notif){
+			startActivity(new Intent(this,ConsumerRequestListActivity.class));
+			return true;
+		}
 		return super.onOptionsItemSelected(item);
 	}
 

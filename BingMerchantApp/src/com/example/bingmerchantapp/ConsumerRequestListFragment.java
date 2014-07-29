@@ -1,5 +1,7 @@
 package com.example.bingmerchantapp;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.app.ListFragment;
@@ -7,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.bingmerchantapp.data.Message;
 import com.example.bingmerchantapp.dummy.DummyContent;
 
 /**
@@ -71,9 +74,12 @@ public class ConsumerRequestListFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 
 		// TODO: replace with a real list adapter.
-		setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-				android.R.layout.simple_list_item_activated_1,
-				android.R.id.text1, DummyContent.ITEMS));
+		ArrayList<Message> merchantData = AppUtils.GetOpenQueriesForCurrentUser();
+		for (Message merchant : merchantData) {
+			Message.addItem(merchant);
+		}
+		
+		setListAdapter(new ConsumerRequestAdapter(this.getActivity(), 0, 0, merchantData));
 	}
 
 	@Override
