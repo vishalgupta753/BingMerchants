@@ -23,6 +23,16 @@ public class MerchantSignup extends ActionBarActivity {
 		setContentView(R.layout.merchant_signup);
 		setBusinessCheckBoxListner();
 		
+		if(MainActivity.CurrentUserId != null)
+		{
+			if(MainActivity.CurrentUserEnv.equals(AppConstants.DefaultAppEnv))
+			{
+				startActivity(new Intent(this, MerchantListActivity.class));
+				return;
+			}
+			startActivity(new Intent(this, MerchantRequestListActivity.class));
+			return;
+		}
 	}
 
 	public void setBusinessCheckBoxListner ()

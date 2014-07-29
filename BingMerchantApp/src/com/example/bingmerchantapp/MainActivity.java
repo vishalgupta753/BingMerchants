@@ -13,10 +13,6 @@ import com.example.bingmerchantapp.AppConstants.MerchantStatus;
 public class MainActivity extends ActionBarActivity {
 
 	public static Context context;
-	public static ConsumerStatus CurrentUserConsumerStatus;
-	public static MerchantStatus CurrentUserMerchantStatus;
-	public static String CurrentMerchantUserId;
-	public static String CurrentConsumerUserId;
 	public static String CurrentUserId;
 	public static String CurrentUserEnv;
 
@@ -25,7 +21,7 @@ public class MainActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		
 		MainActivity.context = getApplicationContext();
-		//AppUtils.CheckLocalSavedUserId();
+		AppUtils.CheckLocalSavedUserId();
 		Intent intent = null;
 		if(AppUtils.StringIsNullOrEmpty(CurrentUserId) == false)
 		{
@@ -69,6 +65,10 @@ public class MainActivity extends ActionBarActivity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
+			return true;
+		}
+		if(id == R.id.action_notif){
+			startActivity(new Intent(this,ConsumerRequestListActivity.class));
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
