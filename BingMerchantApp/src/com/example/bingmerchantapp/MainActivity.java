@@ -25,7 +25,7 @@ public class MainActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		
 		MainActivity.context = getApplicationContext();
-		AppUtils.CheckLocalSavedUserId();
+		//AppUtils.CheckLocalSavedUserId();
 		Intent intent = null;
 		if(AppUtils.StringIsNullOrEmpty(CurrentUserId) == false)
 		{

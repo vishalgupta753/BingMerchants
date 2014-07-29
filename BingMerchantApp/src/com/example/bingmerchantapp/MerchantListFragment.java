@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.app.ListFragment;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.bingmerchantapp.data.Merchant;
@@ -77,9 +76,8 @@ public class MerchantListFragment extends ListFragment {
 		for (Merchant merchant : merchantData) {
 			Merchant.addItem(merchant);
 		}
-		setListAdapter(new ArrayAdapter<Merchant>(getActivity(),
-				android.R.layout.simple_list_item_activated_1,
-				android.R.id.text1, Merchant.ITEMS));
+		
+		setListAdapter(new MerchantListItemAdapter(this.getActivity(), 0, 0, merchantData));
 	}
 
 	@Override

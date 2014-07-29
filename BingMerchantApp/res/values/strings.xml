@@ -33,7 +33,6 @@
     <string name="title_merchant_list">Mechants</string>
     <string name="title_merchant_detail">Merchant Detail</string>
     <string name="search_service">Search Service</string>
-    <string name="search_service">Search Service</string>
     <string name="findMerchantButton">Find</string>
     <string name="favourite">Favourite</string>
     <string name="all">All</string>
@@ -55,5 +54,6 @@
     <string name="signup_business_name_hint">Business Name</string>
     <string name="title_inputfield_list">InputFields</string>
     <string name="title_inputfield_detail">InputField Detail</string>
+    <string name="switchMode">Switch Mode</string>
 
 </resources>

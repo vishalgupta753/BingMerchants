@@ -127,8 +127,8 @@ public class MerchantSignup extends ActionBarActivity {
 		CheckBox checkBox = (CheckBox)findViewById(R.id.isMerchantCheckbox);
 		boolean isMerchantCheckbox = checkBox.isChecked();
 		
-		checkBox = (CheckBox)findViewById(R.id.merchantUseLocation);
-		boolean useCurrentLocation = checkBox.isChecked();
+		//checkBox = (CheckBox)findViewById(R.id.merchantUseLocation);
+		//boolean useCurrentLocation = checkBox.isChecked();
 		Intent intent;
 		if(isMerchantCheckbox)
 		{

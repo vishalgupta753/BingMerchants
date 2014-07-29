@@ -227,7 +227,7 @@ public class AppUtils {
 	{
 		// Create a new HttpClient and Post Header
 	    HttpClient httpclient = new DefaultHttpClient();
-	    HttpPost httppost = new HttpPost("http://10.86.61.3:82/Sample/PlaceMessage.php");
+	    HttpPost httppost = new HttpPost(AppConstants.HttpUrl+"PlaceMessage.php");
 
 	    try {
 	        // Add your data
