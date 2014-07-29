@@ -96,7 +96,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.bingmerchantapp.MerchantListActivity" />
         </activity>
-                <activity
+        <activity
             android:name=".SearchQuery"
             android:label="@string/title_activity_search_query" >
         </activity>
@@ -120,8 +120,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.bingmerchantapp.InputFieldListActivity" />
         </activity>
-
-        
+        <activity
+            android:name=".MerchantRequestListActivity"
+            android:label="@string/title_merchantrequest_list" >
+        </activity>
+        <activity
+            android:name=".MerchantRequestDetailActivity"
+            android:label="@string/title_merchantrequest_detail"
+            android:parentActivityName=".MerchantRequestListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.bingmerchantapp.MerchantRequestListActivity" />
+        </activity>
+        <activity
+            android:name=".ConsumerRequestListActivity"
+            android:label="@string/title_consumerrequest_list" >
+        </activity>
+        <activity
+            android:name=".ConsumerRequestDetailActivity"
+            android:label="@string/title_consumerrequest_detail"
+            android:parentActivityName=".ConsumerRequestListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.bingmerchantapp.ConsumerRequestListActivity" />
+        </activity>
     </application>
 
 </manifest>
