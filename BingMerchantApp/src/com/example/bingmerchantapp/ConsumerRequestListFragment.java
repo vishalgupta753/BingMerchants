@@ -3,10 +3,9 @@ package com.example.bingmerchantapp;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.app.ListFragment;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.bingmerchantapp.data.Message;
