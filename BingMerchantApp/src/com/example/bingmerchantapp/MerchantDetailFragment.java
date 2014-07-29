@@ -1,5 +1,7 @@
 package com.example.bingmerchantapp;
 
+import com.example.bingmerchantapp.data.Merchant;
+
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -7,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.bingmerchantapp.datastore.VendorContent;
 
 /**
  * A fragment representing a single Merchant detail screen. This fragment is
@@ -24,7 +25,7 @@ public class MerchantDetailFragment extends Fragment {
 	/**
 	 * The dummy content this fragment is presenting.
 	 */
-	private VendorContent.VendorItem mItem;
+	private Merchant mItem;
 
 	/**
 	 * Mandatory empty constructor for the fragment manager to instantiate the
@@ -41,7 +42,7 @@ public class MerchantDetailFragment extends Fragment {
 			// Load the dummy content specified by the fragment
 			// arguments. In a real-world scenario, use a Loader
 			// to load content from a content provider.
-			mItem = VendorContent.ITEM_MAP.get(getArguments().getString(
+			mItem = Merchant.ITEM_MAP.get(getArguments().getString(
 					ARG_ITEM_ID));
 		}
 	}

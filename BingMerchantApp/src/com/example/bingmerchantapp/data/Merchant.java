@@ -1,6 +1,11 @@
 package com.example.bingmerchantapp.data;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
 
 public class Merchant {
 	
@@ -12,6 +17,26 @@ public class Merchant {
 	private ArrayList<String> Services;
 	private String GeoLocation;
 	private Boolean IsFavouriteMerchant;
+	
+	/**
+	 * An array of sample (dummy) items.
+	 */
+	public static List<Merchant> ITEMS = new ArrayList<Merchant>();
+
+	/**
+	 * A map of sample (dummy) items, by ID.
+	 */
+	public static Map<String, Merchant> ITEM_MAP = new HashMap<String, Merchant>();
+
+	public static void addItem(Merchant item) {
+		ITEMS.add(item);
+		ITEM_MAP.put(item.MerchantId, item);
+	}
+	
+	public String toString()
+	{
+		return BusinessName;
+	}
 	
 	public Boolean getIsFavouriteMerchant() {
 		return IsFavouriteMerchant;
