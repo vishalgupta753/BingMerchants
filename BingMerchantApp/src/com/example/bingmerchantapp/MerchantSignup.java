@@ -1,5 +1,9 @@
 package com.example.bingmerchantapp;
 
+import com.example.bingmerchantapp.data.Consumer;
+import com.example.bingmerchantapp.data.Merchant;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -95,20 +99,57 @@ public class MerchantSignup extends ActionBarActivity {
 	{
 		EditText editText = (EditText) findViewById(R.id.merchantName);
 		String merchantName = editText.getText().toString();
+		
 		editText = (EditText)findViewById(R.id.merchantServices);
 		String merchantServices = editText.getText().toString();
+		
 		editText = (EditText)findViewById(R.id.merchantCellphone);
 		String merchantCellphone = editText.getText().toString();
+		
+		editText = (EditText)findViewById(R.id.stateLine);
+		String stateLine = editText.getText().toString();
+		
+		editText = (EditText)findViewById(R.id.addressLine1);
+		String addressLine1 = editText.getText().toString();
+		
+		editText = (EditText)findViewById(R.id.addressLine2);
+		String addressLine2 = editText.getText().toString();
+		
+		editText = (EditText)findViewById(R.id.countryLine);
+		String countryLine = editText.getText().toString();
+		
 		editText = (EditText)findViewById(R.id.merchantZipcode);
-		String merchantAddress = editText.getText().toString();
+		String merchantZipcode = editText.getText().toString();
 		
-		//CheckBox checkBox = (CheckBox)findViewById(R.id.merchantUseLocation);
-		//boolean useCurrentLocation = checkBox.isChecked();
+		editText = (EditText)findViewById(R.id.businessName);
+		String businessName = editText.getText().toString();
 		
-		AppUtils.SaveNewMerchant(merchantName, merchantAddress, "", merchantCellphone, merchantServices);
-		AppUtils.SaveLocalUserId(merchantCellphone, "m");
+		String address = addressLine1 + ", " + addressLine2 + ", " + stateLine + ", " + countryLine + ", PinCode-" + merchantZipcode;
 		
-//		Intent intent = new Intent(this, MerchantRequests.class);
-//		startActivity(intent);
+		CheckBox checkBox = (CheckBox)findViewById(R.id.isMerchantCheckbox);
+		boolean isMerchantCheckbox = checkBox.isChecked();
+		
+		Intent intent;
+		if(isMerchantCheckbox)
+		{
+			Merchant merchant = new Merchant(merchantCellphone, merchantName, merchantCellphone, address, businessName, merchantServices, "", false);
+			AppUtils.SaveNewMerchant(merchant);
+			
+			intent = new Intent(this, MerchantListActivity.class);
+			MainActivity.CurrentUserEnv="Merchant";
+		}
+		
+		else
+		{
+			Consumer consumer = new Consumer(merchantCellphone, merchantName, merchantCellphone, address);
+			AppUtils.SaveNewConsumer(consumer);
+			
+			intent = new Intent(this, MerchantListActivity.class);
+			MainActivity.CurrentUserEnv="Consumer";
+		}
+		MainActivity.CurrentUserId = merchantCellphone;
+		
+		AppUtils.SaveLocalUserId(MainActivity.CurrentUserId, MainActivity.CurrentUserEnv);
+		startActivity(intent);
 	}
 }

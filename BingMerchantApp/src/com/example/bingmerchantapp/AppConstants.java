@@ -17,5 +17,7 @@ public class AppConstants {
 	final public static String FileName = "BingConnect.txt";
 	
 	final public static String DefaultAppEnv = "Consumer";
+	
+	final public static String HttpUrl = "http://10.171.138.55:81/local/Php/";
 
 }

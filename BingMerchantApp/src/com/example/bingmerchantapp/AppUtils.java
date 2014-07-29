@@ -79,7 +79,8 @@ public class AppUtils {
 			FileOutputStream fout = MainActivity.context.openFileOutput(AppConstants.FileName, Context.MODE_PRIVATE);
 			outputStreamwriter = new OutputStreamWriter(fout);
 			bw = new BufferedWriter(outputStreamwriter);
-			bw.write(userId+":"+defaultRole);
+			String role = defaultRole.equals(AppConstants.DefaultAppEnv)?"c":"m";
+			bw.write(userId+":"+role);
 			System.out.println("SaveUserId funtion: Completed");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -147,22 +148,22 @@ public class AppUtils {
 		return str == null || str.equals("");
 	}
 	
-	public static void SaveNewMerchant(String name, String address, String location, String cellPhone, String services)
+	public static void SaveNewMerchant(Merchant merchant)
 	{
 		// Create a new HttpClient and Post Header
 	    HttpClient httpclient = new DefaultHttpClient();
-	    HttpPost httppost = new HttpPost("http://10.86.61.3:82/Sample/RegisterVendor.php");
+	    HttpPost httppost = new HttpPost(AppConstants.HttpUrl + "RegisterVendor.php");
 
 	    try {
 	        // Add your data
 	        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-	        nameValuePairs.add(new BasicNameValuePair("VendorID", cellPhone));
-	        nameValuePairs.add(new BasicNameValuePair("BusinessName", name));
-	        nameValuePairs.add(new BasicNameValuePair("VendorName", name));
-	        nameValuePairs.add(new BasicNameValuePair("Address", address));
-	        nameValuePairs.add(new BasicNameValuePair("PhoneNumber", cellPhone));
-	        nameValuePairs.add(new BasicNameValuePair("Tags", services));
-	        nameValuePairs.add(new BasicNameValuePair("GeoLocation", location));
+	        nameValuePairs.add(new BasicNameValuePair("VendorID", "M_"+merchant.getMerchantId()));
+	        nameValuePairs.add(new BasicNameValuePair("BusinessName", merchant.getBusinessName()));
+	        nameValuePairs.add(new BasicNameValuePair("VendorName", merchant.getName()));
+	        nameValuePairs.add(new BasicNameValuePair("Address", merchant.getAddress()));
+	        nameValuePairs.add(new BasicNameValuePair("PhoneNumber", merchant.getPhone()));
+	        nameValuePairs.add(new BasicNameValuePair("Tags", merchant.getServices().toString()));
+	        nameValuePairs.add(new BasicNameValuePair("GeoLocation", merchant.getGeoLocation()));
 	        httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 	        // Execute HTTP Post Request
@@ -178,19 +179,19 @@ public class AppUtils {
 	    }
 	}
 	
-	public static void SaveNewConsumer(String name, String address, String location, String cellPhone)
+	public static void SaveNewConsumer(Consumer consumer)
 	{
 		// Create a new HttpClient and Post Header
 	    HttpClient httpclient = new DefaultHttpClient();
-	    HttpPost httppost = new HttpPost("http://10.86.61.3:82/Sample/RegisterUser.php");
+	    HttpPost httppost = new HttpPost(AppConstants.HttpUrl+"RegisterUser.php");
 
 	    try {
 	        // Add your data
 	        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-	        nameValuePairs.add(new BasicNameValuePair("UserID", cellPhone));
-	        nameValuePairs.add(new BasicNameValuePair("UserName", name));
-	        nameValuePairs.add(new BasicNameValuePair("PhoneNumber", cellPhone));
-	        nameValuePairs.add(new BasicNameValuePair("Address", address));
+	        nameValuePairs.add(new BasicNameValuePair("UserID", "C_"+consumer.getConsumerId()));
+	        nameValuePairs.add(new BasicNameValuePair("UserName", consumer.getName()));
+	        nameValuePairs.add(new BasicNameValuePair("PhoneNumber", consumer.getPhone()));
+	        nameValuePairs.add(new BasicNameValuePair("Address", consumer.getAddress()));
 	        httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 	        // Execute HTTP Post Request
@@ -250,19 +251,19 @@ public class AppUtils {
 	{
 		ArrayList<Message> messageData = new ArrayList<Message>();
 		
-		Message m1 = new Message();
-		Consumer c1 = new Consumer("JB Kiryana", "123456789", "Gachibowli"); 
-		m1.setConsumer(c1);
-		m1.setMessageId("34567");
-		m1.setMessage("Need Following groceries intems by 5pm");
-		
-		Message m2 = new Message(); 
-		m2.setConsumer(c1);
-		m2.setMessageId("34568");
-		m2.setMessage("Need Following groceries intems by 5pm");
-		
-		messageData.add(m1);
-		messageData.add(m2);
+//		Message m1 = new Message();
+//		Consumer c1 = new Consumer("JB Kiryana", "123456789", "Gachibowli"); 
+//		m1.setConsumer(c1);
+//		m1.setMessageId("34567");
+//		m1.setMessage("Need Following groceries intems by 5pm");
+//		
+//		Message m2 = new Message(); 
+//		m2.setConsumer(c1);
+//		m2.setMessageId("34568");
+//		m2.setMessage("Need Following groceries intems by 5pm");
+//		
+//		messageData.add(m1);
+//		messageData.add(m2);
 		
 		return messageData;
 	}
