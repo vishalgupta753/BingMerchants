@@ -1,54 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    
+    <RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    >
 
     <EditText
         android:id="@+id/merchantName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:ems="10"
         android:hint="@string/name" />
 
+    <requestFocus />
 
     <EditText
         android:id="@+id/merchantCellphone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/merchantName"
         android:ems="10"
-        android:inputType="phone"
-        android:hint="@string/cellphone" >
-
-        <requestFocus />
-    </EditText>
+        android:hint="@string/cellphone"
+        android:inputType="phone" />
 
     <EditText
-        android:id="@+id/merchantAddress"
+        android:id="@+id/addressLine1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/merchantCellphone"
         android:ems="10"
-        android:hint="@string/address" />
+        android:hint="@string/signup_address_line_1_hint" />
+
+    <EditText
+        android:id="@+id/addressLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/addressLine1"
+        android:ems="10"
+        android:hint="@string/signup_address_line_2_hint"
+        android:text="@string/signup_address_line_2_text" />
+
+    <LinearLayout
+        android:id="@+id/stateCountrySignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/addressLine2"
+        android:layout_below="@+id/addressLine2" >
+
+        <EditText
+            android:id="@+id/stateLine"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/signup_address_state_hint"
+            android:text="@string/signup_address_state_text" />
+
+        <EditText
+            android:id="@+id/countryLine"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/signup_address_country_hint"
+            android:text="@string/signup_address_country_text" />
+
+    </LinearLayout>
+	
+    <EditText
+        android:id="@+id/merchantZipcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stateCountrySignup"
+        android:ems="10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:hint="@string/signup_address_zipcode_hint"
+        android:text="@string/signup_address_zipcode_text" />
+
+    <EditText
+        android:id="@+id/businessName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBoxesSignup"
+        android:ems="10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:hint="@string/signup_business_name_hint"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/merchantServices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/businessName"
         android:ems="10"
-        android:hint="@string/services" >
-
-        <requestFocus />
-    </EditText>
-
-    <CheckBox
-        android:id="@+id/merchantUseLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/use_current_location" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:hint="@string/services"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/merchantSubmitRegistration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/merchantServices"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:onClick="SaveMerchantData"
         android:text="@string/submit" />
 
-</TableLayout>
+    <LinearLayout
+        android:id="@+id/checkBoxesSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/merchantZipcode"
+        android:layout_below="@+id/merchantZipcode" >
+
+        <CheckBox
+            android:id="@+id/isMerchantCheckbox"
+            android:layout_width="152dp"
+            android:layout_height="89dp"
+            android:text="@string/signup_merchant_checkbox"
+             />
+
+        <CheckBox
+            android:id="@+id/merchantUseLocation"
+            android:layout_width="152dp"
+            android:layout_height="match_parent"
+            android:checked="true"
+            android:text="@string/use_current_location"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>

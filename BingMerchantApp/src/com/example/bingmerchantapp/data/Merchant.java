@@ -11,9 +11,20 @@ public class Merchant {
 	private String BusinessName;
 	private ArrayList<String> Services;
 	private String GeoLocation;
+	private Boolean IsFavouriteMerchant;
 	
+	public Boolean getIsFavouriteMerchant() {
+		return IsFavouriteMerchant;
+	}
+	public void setIsFavouriteMerchant(Boolean isFavouriteMerchant) {
+		IsFavouriteMerchant = isFavouriteMerchant;
+	}
+	
+	public Merchant() {
+		super();
+	}
 	public Merchant(String merchantId, String name, String phone,
-			String address, String businessName,String services, String geoLocation) {
+			String address, String businessName,String services, String geoLocation, Boolean isFavouriteMerchant) {
 		super();
 		MerchantId = merchantId;
 		Name = name;
@@ -25,6 +36,7 @@ public class Merchant {
 			Services.add(str);
 		}
 		GeoLocation = geoLocation;
+		IsFavouriteMerchant = isFavouriteMerchant;
 	}
 	public String getMerchantId() {
 		return MerchantId;
