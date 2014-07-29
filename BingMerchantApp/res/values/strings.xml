@@ -6,6 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="merchant">Merchant</string>
     <string name="customer">Customer</string>
+    <string name="consumer">Consumer</string>
     <string name="name">Name</string>
     <string name="cellphone">Mobile Number</string>
     <string name="services">Services</string>
@@ -55,5 +56,12 @@
     <string name="title_inputfield_list">InputFields</string>
     <string name="title_inputfield_detail">InputField Detail</string>
     <string name="switchMode">Switch Mode</string>
+    <string name="title_merchantrequest_list">MerchantRequests</string>
+    <string name="title_merchantrequest_detail">MerchantRequest Detail</string>
+    <string name="accept_requests">Accept Request</string>
+    <string name="reject_requests">Reject Request</string>
+    <string name="request_completed">Request Completed</string>
+    <string name="title_consumerrequest_list">ConsumerRequests</string>
+    <string name="title_consumerrequest_detail">ConsumerRequest Detail</string>
 
 </resources>
