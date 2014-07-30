@@ -1,6 +1,7 @@
 package com.example.bingmerchantapp;
 
 import java.util.List;
+import java.util.Random;
 
 import com.example.bingmerchantapp.data.Message;
 
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ConsumerRequestAdapter extends ArrayAdapter<Message> {
@@ -34,7 +36,9 @@ public class ConsumerRequestAdapter extends ArrayAdapter<Message> {
 		
 		TextView merchantBusinessName = (TextView) merchantListItemView.findViewById(R.id.merchantBusinessName);
 		TextView merchantBusinessTags = (TextView) merchantListItemView.findViewById(R.id.merchantBusinessTags);
-		
+		ImageView image = (ImageView) merchantListItemView.findViewById(R.id.imageView1);
+		int imageDrawable = AppUtils.getRandomImageInt();
+		image.setImageResource (imageDrawable);
 		merchantBusinessName.setText(merchantItem.getMerchant().toString());
 		merchantBusinessTags.setText(merchantItem.getMessage());
 		

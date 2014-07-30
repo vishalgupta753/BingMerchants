@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -460,5 +461,48 @@ public class AppUtils {
 	        e.printStackTrace();
 	    }
 	}
-	
+
+	public static int getRandomImageInt ()
+	{
+		int imageDrawable = R.drawable.guy1;
+	    Random rand = new Random();
+	    int randomNum = rand.nextInt((8) + 1) + 1;
+	    if (randomNum == 1)
+	    {
+	    	imageDrawable = R.drawable.guy1;
+	    }
+	    else if (randomNum == 2)
+	    {
+	    	imageDrawable = R.drawable.guy2;
+	    }
+	    else if (randomNum == 3)
+	    {
+	    	imageDrawable = R.drawable.guy3;
+	    }
+	    else if (randomNum == 4)
+	    {
+	    	imageDrawable = R.drawable.guy4;
+	    }
+	    else if (randomNum == 5)
+	    {
+	    	imageDrawable = R.drawable.guy5;
+	    }
+	    else if (randomNum == 6)
+	    {
+	    	imageDrawable = R.drawable.guy6;
+	    }
+	    else if (randomNum == 7)
+	    {
+	    	imageDrawable = R.drawable.guy7;
+	    }
+	    else if (randomNum == 8)
+	    {
+	    	imageDrawable = R.drawable.guy8;
+	    }
+	    else if (randomNum == 9)
+	    {
+	    	imageDrawable = R.drawable.guy9;
+	    }
+	    return imageDrawable;
+	}
 }
