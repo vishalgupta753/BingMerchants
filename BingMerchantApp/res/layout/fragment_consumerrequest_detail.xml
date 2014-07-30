@@ -38,19 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/merchantStatus"
         android:layout_below="@+id/merchantStatus"
-        android:layout_marginTop="14dp" >
-
-        <ImageButton
-            android:id="@+id/ImageButton01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/like" />
-
-        <ImageButton
-            android:id="@+id/imageButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/like" />
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal" >
 
     </LinearLayout>
 
@@ -73,5 +62,23 @@
         android:text="@string/services"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
+
+    <CheckBox
+        android:id="@+id/recommendMerchant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/merchantRequestResponseButtons"
+        android:layout_toRightOf="@+id/merchantRequestResponseButtons"
+        android:text="@string/recommond_merchant" />
+
+    <Button
+        android:id="@+id/feedbackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/recommendMerchant"
+        android:layout_below="@+id/recommendMerchant"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@+id/merchantCellPhone"
+        android:text="@string/send_feedback" />
 
 </RelativeLayout>

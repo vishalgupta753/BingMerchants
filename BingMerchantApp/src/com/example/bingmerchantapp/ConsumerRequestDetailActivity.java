@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.app.Activity;
 
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 /**
  * An activity representing a single ConsumerRequest detail screen. This
@@ -68,4 +70,15 @@ public class ConsumerRequestDetailActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+//	
+//	public void SendQueryToConsumer(View view) {
+//		EditText query = (EditText) findViewById(R.id.consumerQuery);
+//		String consumerQuery = query.getText().toString();
+//		if (AppUtils.StringIsNullOrEmpty(consumerQuery) == false)
+//			AppUtils.SendQueryToMerchant(merchant, query.getText().toString());
+//		
+//		Intent intent = new Intent(this, SearchActivity.class);
+//		startActivity(intent);
+//		finish();
+//	}
 }

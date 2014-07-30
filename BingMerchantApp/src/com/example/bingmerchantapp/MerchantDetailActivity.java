@@ -75,7 +75,8 @@ public class MerchantDetailActivity extends Activity {
 		if (AppUtils.StringIsNullOrEmpty(consumerQuery) == false)
 			AppUtils.SendQueryToMerchant(merchant, query.getText().toString());
 		
-		Intent intent = new Intent(this, MerchantListActivity.class);
+		Intent intent = new Intent(this, SearchActivity.class);
 		startActivity(intent);
+		finish();
 	}
 }

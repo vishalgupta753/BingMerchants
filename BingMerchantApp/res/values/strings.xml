@@ -80,5 +80,8 @@
         <item>Rajesh Electric</item>
         <item>Foot Spa Local</item>
     </string-array>
+        <string name="recommond_merchant">Recommend Merchant</string>
+        <string name="feedback_button">Feedback Button</string>
+        <string name="send_feedback">Send Feedback</string>
 
 </resources>

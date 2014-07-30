@@ -73,13 +73,15 @@ public class ConsumerRequestListFragment extends ListFragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		Message.ITEMS.clear();
+		Message.ITEM_MAP.clear();
 		// TODO: replace with a real list adapter.
 		ArrayList<Message> merchantData = AppUtils.GetOpenQueriesForCurrentUser();
 		for (Message merchant : merchantData) {
 			Message.addItem(merchant);
 		}
 		
-		setListAdapter(new ConsumerRequestAdapter(this.getActivity(), 0, 0, merchantData));
+		setListAdapter(new ConsumerRequestAdapter(this.getActivity(), 0, 0, Message.ITEMS));
 	}
 
 	@Override

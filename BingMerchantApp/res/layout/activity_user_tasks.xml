@@ -20,7 +20,7 @@
         android:onClick="gotToMerchantRevertScreeen"/>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/feedbackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/Button01"
@@ -34,9 +34,9 @@
         android:id="@+id/Button02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button1"
-        android:layout_below="@+id/button1"
+        android:layout_alignLeft="@+id/feedbackButton"
+        android:layout_alignRight="@+id/feedbackButton"
+        android:layout_below="@+id/feedbackButton"
         android:text="@string/button_recent_services" 
         android:onClick="gotToRecentServiceReview"/>
 

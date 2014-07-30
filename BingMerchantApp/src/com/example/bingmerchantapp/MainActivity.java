@@ -31,8 +31,8 @@ public class MainActivity extends ActionBarActivity {
 //		}
 		
 		AppUtils.CheckLocalSavedUserId();
-		CurrentUserId = "987654321";
-		CurrentUserEnv="Merchant";
+//		CurrentUserId = "987654321";
+//		CurrentUserEnv="Merchant";
 		Intent intent = null;
 		if (AppUtils.StringIsNullOrEmpty(CurrentUserId) == false) {
 			if (CurrentUserEnv.equals(AppConstants.DefaultAppEnv)) {

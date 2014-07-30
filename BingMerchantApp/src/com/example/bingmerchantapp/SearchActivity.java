@@ -58,7 +58,6 @@ public class SearchActivity extends Activity {
 		// Adding child data
 		listDataHeader.add("Your Recent Searches");
 		listDataHeader.add("Your Friends Need Help With");
-		listDataHeader.add("Coming Soon..");
 
 		// Adding child data
 		List<String> top250 = new ArrayList<String>();
