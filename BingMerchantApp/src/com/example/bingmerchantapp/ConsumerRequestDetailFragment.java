@@ -62,19 +62,19 @@ public class ConsumerRequestDetailFragment extends Fragment {
 				.setText(mItem.getMerchant().getPhone());
 				
 				String  messageStatus = "";
-				if (mItem.getMessageStatus() == "o")
+				if (mItem.getMessageStatus().equals("o"))
 				{
 					messageStatus = "Requested business has not reverted back";
 				}
-				else if (mItem.getMessageStatus() == "p")
+				else if (mItem.getMessageStatus().equals("p"))
 				{
 					messageStatus = "Your request has been accepted";
 				}
-				else if (mItem.getMessageStatus() == "d")
+				else if (mItem.getMessageStatus().equals("d"))
 				{
 					messageStatus = "Your request has been declined";
 				}
-				else if (mItem.getMessageStatus() == "c")
+				else if (mItem.getMessageStatus().equals("c"))
 				{
 					messageStatus = "Your request has been completed";
 				}

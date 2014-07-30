@@ -14,7 +14,7 @@ public class Message {
 	private String messageStatus;
 	
 	public String getMessageStatus() {
-		return messageStatus;
+		return this.messageStatus;
 	}
 
 

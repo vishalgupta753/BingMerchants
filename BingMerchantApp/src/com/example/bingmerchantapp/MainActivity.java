@@ -28,7 +28,7 @@ public class MainActivity extends ActionBarActivity {
 			}
 			else
 			{
-				intent = new Intent(this, MerchantListActivity.class);
+				intent = new Intent(this, MerchantRequestListActivity.class);
 			}
 		}
 		else
