@@ -68,7 +68,7 @@ public class ConsumerRequestDetailFragment extends Fragment {
 				{
 					messageStatus = "Requested business has not reverted back";
 				}
-				else if (mItem.getMessageStatus().equals("p"))
+				else if (mItem.getMessageStatus().equals("a"))
 				{
 					messageStatus = "Your request has been accepted";
 				}
