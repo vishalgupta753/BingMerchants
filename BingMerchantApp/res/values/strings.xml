@@ -31,7 +31,7 @@
     <string name="title_activity_consumer_add_vendor">ConsumerAddVendor</string>
     <string name="title_activity_consumer_profile">ConsumerProfile</string>
     <string name="scan_qr_code">Scan QR Code</string>
-    <string name="title_merchant_list">Service Providers</string>
+    <string name="title_merchant_list">Search Results</string>
     <string name="title_merchant_detail">Service Details</string>
     <string name="search_service">Search Service</string>
     <string name="findMerchantButton">Find</string>
