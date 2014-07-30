@@ -33,7 +33,7 @@
     <string name="scan_qr_code">Scan QR Code</string>
     <string name="title_merchant_list">Search Results</string>
     <string name="title_merchant_detail">Service Details</string>
-    <string name="search_service">Search Service</string>
+    <string name="search_service">Tell me what you are looking for</string>
     <string name="findMerchantButton">Find</string>
     <string name="favourite">Favourite</string>
     <string name="all">All</string>
@@ -83,5 +83,6 @@
         <string name="recommond_merchant">Recommend Merchant</string>
         <string name="feedback_button">Feedback Button</string>
         <string name="send_feedback">Send Feedback</string>
+        <string name="specialist_can_call_me_for_deltails">Specialist can call me for deltails</string>
 
 </resources>
