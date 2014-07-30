@@ -61,6 +61,7 @@ public class MerchantRequestDetailFragment extends Fragment {
 			.setText(mItem.getConsumer().getPhone());
 			((TextView) rootView.findViewById(R.id.consumerMessage))
 			.setText(mItem.getMessage());
+			MerchantRequestDetailActivity.message = mItem;
 		}
 
 		return rootView;

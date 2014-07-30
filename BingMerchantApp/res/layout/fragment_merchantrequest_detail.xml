@@ -78,12 +78,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:onClick="SendQueryToConsumer"
+            android:onClick="SendRequestStatus"
             android:text="@string/submit" />
 
     </LinearLayout>
-
-
 
     <Button
         android:id="@+id/submitRequestCompletion"
@@ -92,6 +90,7 @@
         android:layout_alignLeft="@+id/merchantRequestResponseButtons"
         android:layout_alignRight="@+id/merchantRequestResponseButtons"
         android:layout_below="@+id/merchantRequestResponseButtons"
+        android:onClick="SendRequestStatus"
         android:text="@string/request_completed" />
 
 </RelativeLayout>

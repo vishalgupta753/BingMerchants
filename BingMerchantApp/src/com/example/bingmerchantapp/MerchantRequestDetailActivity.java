@@ -1,10 +1,15 @@
 package com.example.bingmerchantapp;
 
+import com.example.bingmerchantapp.data.Message;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 /**
  * An activity representing a single MerchantRequest detail screen. This
@@ -17,6 +22,7 @@ import android.view.MenuItem;
  */
 public class MerchantRequestDetailActivity extends Activity {
 
+	public static Message message;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -64,5 +70,25 @@ public class MerchantRequestDetailActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void SendRequestStatus (View view)
+	{
+		String status = "o";
+		if (view.getId()== R.id.submitRequestResponse)
+		{
+		RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroup1);
+		RadioButton rb = (RadioButton) findViewById(rg.getCheckedRadioButtonId());
+		if (rb.getId() == R.id.radio0)
+			status = "a";
+		else
+			status = "d";
+		}
+		else
+		{
+			status = "c";
+		}
+		AppUtils.UpdateStatus(message, status);
+		startActivity(new Intent (this, MerchantRequestListActivity.class));
 	}
 }

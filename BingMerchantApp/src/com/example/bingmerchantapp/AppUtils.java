@@ -381,7 +381,7 @@ public class AppUtils {
         try {
             // Add your data
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-            nameValuePairs.add(new BasicNameValuePair("VenderID", "M_"+MainActivity.CurrentUserId));
+            nameValuePairs.add(new BasicNameValuePair("UserID", "M_"+MainActivity.CurrentUserId));
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
             // Execute HTTP Post Request
@@ -435,4 +435,30 @@ public class AppUtils {
           return messageData;
     }
 
+	public static void UpdateStatus(Message message, String status)
+	{
+		// Create a new HttpClient and Post Header
+	    HttpClient httpclient = new DefaultHttpClient();
+	    HttpPost httppost = new HttpPost(AppConstants.HttpUrl + "UpdateMessage.php");
+
+	    try {
+	        // Add your data
+	        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+	        nameValuePairs.add(new BasicNameValuePair("MessageID", message.getMessageId()));
+	        nameValuePairs.add(new BasicNameValuePair("Status", status));
+	        httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+	        // Execute HTTP Post Request
+	        StrictMode.ThreadPolicy policy = new StrictMode.
+	                ThreadPolicy.Builder().permitAll().build();
+	        StrictMode.setThreadPolicy(policy); 
+	        httpclient.execute(httppost);
+	        
+	    } catch (ClientProtocolException e) {
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
 }

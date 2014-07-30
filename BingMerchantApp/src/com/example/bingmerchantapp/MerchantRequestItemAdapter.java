@@ -27,7 +27,7 @@ public class MerchantRequestItemAdapter extends ArrayAdapter<Message> {
 		LayoutInflater inflater = (LayoutInflater)mContext 
 		        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		if(merchantListItemView == null){
-			merchantListItemView = inflater.inflate(R.layout.activity_merchant_list, parent, false);
+			merchantListItemView = inflater.inflate(R.layout.entity_list_view, parent, false);
 		}
 		
 		Message merchantItem = getItem(position);
@@ -35,7 +35,7 @@ public class MerchantRequestItemAdapter extends ArrayAdapter<Message> {
 		TextView merchantBusinessName = (TextView) merchantListItemView.findViewById(R.id.merchantBusinessName);
 		TextView merchantBusinessTags = (TextView) merchantListItemView.findViewById(R.id.merchantBusinessTags);
 		
-		merchantBusinessName.setText(merchantItem.getConsumer().toString());
+		merchantBusinessName.setText(merchantItem.getConsumer().getName());
 		merchantBusinessTags.setText(merchantItem.getMessage());
 		
 		return merchantListItemView;
