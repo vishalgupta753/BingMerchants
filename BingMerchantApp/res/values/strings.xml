@@ -15,8 +15,8 @@
     <string name="user_query">Send your Query To Marchant</string>
     <string name="post_query">Send Query</string>
     <string name="orderString">Business Requests</string>
-    <string name="title_activity_merchant_signup">MerchantSignup</string>
-    <string name="title_activity_merchant_requests">MerchantRequests</string>
+    <string name="title_activity_merchant_signup">Bing Connect</string>
+    <string name="title_activity_merchant_requests">Requests</string>
     <string name="title_activity_consumer_signup">ConsumerSignup</string>
     <string name="title_activity_consumer_vendors">ConsumerVendors</string>
     <string name="title_activity_user_tasks">UserTasks</string>
@@ -31,8 +31,8 @@
     <string name="title_activity_consumer_add_vendor">ConsumerAddVendor</string>
     <string name="title_activity_consumer_profile">ConsumerProfile</string>
     <string name="scan_qr_code">Scan QR Code</string>
-    <string name="title_merchant_list">Mechants</string>
-    <string name="title_merchant_detail">Merchant Detail</string>
+    <string name="title_merchant_list">Service Providers</string>
+    <string name="title_merchant_detail">Service Details</string>
     <string name="search_service">Search Service</string>
     <string name="findMerchantButton">Find</string>
     <string name="favourite">Favourite</string>
@@ -61,10 +61,10 @@
     <string name="accept_requests">Accept Request</string>
     <string name="reject_requests">Reject Request</string>
     <string name="request_completed">Request Completed</string>
-    <string name="title_consumerrequest_list">ConsumerRequests</string>
-    <string name="title_consumerrequest_detail">ConsumerRequest Detail</string>
-    <string name="title_activity_search">Search Merchant</string>
-    <string name="look">Look up Merchant</string>
+    <string name="title_consumerrequest_list">Service Requests</string>
+    <string name="title_consumerrequest_detail">Service Request Details</string>
+    <string name="title_activity_search">Bing Connect</string>
+    <string name="look">What are you looking for?</string>
     <string-array name="location_arrays">
         <item>Gachibowli</item>
         <item>Kondapur</item>

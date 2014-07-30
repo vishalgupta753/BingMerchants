@@ -22,36 +22,15 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/sendQueryCellPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/merchantDetailsHeader"
-        android:layout_alignRight="@+id/merchantDetailsHeader"
-        android:layout_below="@+id/merchantDetailsHeader"
-        android:layout_marginTop="18dp"
-        android:text="@string/cellphone"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/queryPageMerchantDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/sendQueryCellPhone"
-        android:layout_alignRight="@+id/sendQueryCellPhone"
-        android:layout_below="@+id/sendQueryCellPhone"
-        android:layout_marginTop="18dp"
-        android:text="@string/services"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
     <EditText
         android:id="@+id/consumerQuery"
         android:layout_width="wrap_content"
         android:layout_height="180dp"
         android:layout_above="@+id/sendQuerySubmit"
-        android:layout_alignLeft="@+id/queryPageMerchantDetails"
-        android:layout_alignRight="@+id/queryPageMerchantDetails"
-        android:layout_below="@+id/queryPageMerchantDetails"
+        android:layout_alignLeft="@+id/queryPageMerchantAddressBusiness"
+        android:layout_alignRight="@+id/merchantDetailsHeader"
+        android:layout_below="@+id/queryPageMerchantAddressBusiness"
+        android:layout_marginTop="18dp"
         android:ems="10"
         android:hint="@string/search_service"
         android:inputType="textMultiLine" />
@@ -65,5 +44,35 @@
         android:layout_marginBottom="27dp"
         android:onClick="SendQueryToConsumer"
         android:text="@string/submit" />
+
+    <TextView
+        android:id="@+id/queryPageMerchantDetailsBusiness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/merchantDetailsHeader"
+        android:layout_below="@+id/merchantDetailsHeader"
+        android:layout_marginTop="10dp"
+        android:text="@string/services"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/sendQueryCellPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/queryPageMerchantDetailsBusiness"
+        android:layout_below="@+id/queryPageMerchantDetailsBusiness"
+        android:layout_marginTop="9dp"
+        android:text="@string/cellphone"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/queryPageMerchantAddressBusiness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sendQueryCellPhone"
+        android:layout_below="@+id/sendQueryCellPhone"
+        android:layout_marginTop="8dp"
+        android:text="@string/services"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>

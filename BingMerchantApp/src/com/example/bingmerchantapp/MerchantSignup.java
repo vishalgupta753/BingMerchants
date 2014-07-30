@@ -179,7 +179,7 @@ public class MerchantSignup extends ActionBarActivity {
 			Consumer consumer = new Consumer(merchantCellphone, merchantName, merchantCellphone, address);
 			AppUtils.SaveNewConsumer(consumer);
 			
-			intent = new Intent(this, MerchantListActivity.class);
+			intent = new Intent(this, SearchActivity.class);
 			MainActivity.CurrentUserEnv="Consumer";
 		}
 		MainActivity.CurrentUserId = merchantCellphone;
