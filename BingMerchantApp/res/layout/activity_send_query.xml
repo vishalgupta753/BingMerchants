@@ -33,7 +33,6 @@
         android:id="@+id/consumerQuery"
         android:layout_width="wrap_content"
         android:layout_height="180dp"
-        android:layout_above="@+id/sendQuerySubmit"
         android:layout_alignLeft="@+id/sendQueryCellPhone"
         android:layout_alignRight="@+id/sendQueryMerchantAddress"
         android:layout_below="@+id/sendQueryMerchantAddress"
@@ -51,13 +50,21 @@
         android:layout_marginTop="18dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/consumerQuery"
+        android:layout_alignRight="@+id/consumerQuery"
+        android:layout_below="@+id/consumerQuery"
+        android:text="@string/specialist_can_call_me_for_deltails" />
+
     <Button
         android:id="@+id/sendQuerySubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/consumerQuery"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="26dp"
+        android:layout_alignLeft="@+id/checkBox1"
+        android:layout_below="@+id/checkBox1"
         android:onClick="SendQueryToConsumer"
         android:text="@string/submit" />
 
