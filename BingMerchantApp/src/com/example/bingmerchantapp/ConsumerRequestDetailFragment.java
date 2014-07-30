@@ -57,6 +57,8 @@ public class ConsumerRequestDetailFragment extends Fragment {
 		// Show the dummy content as text in a TextView.
 		if (mItem != null) {
 				((TextView) rootView.findViewById(R.id.customerRequestMerchantName))
+				.setText(mItem.getMerchant().getName());
+				((TextView) rootView.findViewById(R.id.customerRequestMerchantBusiness))
 				.setText(mItem.getMerchant().toString());
 				((TextView) rootView.findViewById(R.id.merchantCellPhone))
 				.setText(mItem.getMerchant().getPhone());
