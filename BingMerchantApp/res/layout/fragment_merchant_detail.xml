@@ -1,78 +1,68 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/merchantDetailsHeader"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:layout_alignRight="@+id/checkBox1"
+    android:orientation="vertical" >
 
-    <LinearLayout
-        android:id="@+id/merchantDetailsHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" >
-
-        <TextView
-            android:id="@+id/queryPageMerchantName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/merchant"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </LinearLayout>
-
-    <EditText
-        android:id="@+id/consumerQuery"
-        android:layout_width="wrap_content"
-        android:layout_height="180dp"
-        android:layout_above="@+id/sendQuerySubmit"
-        android:layout_alignLeft="@+id/queryPageMerchantAddressBusiness"
-        android:layout_alignRight="@+id/merchantDetailsHeader"
-        android:layout_below="@+id/queryPageMerchantAddressBusiness"
-        android:layout_marginTop="18dp"
-        android:ems="10"
-        android:hint="@string/search_service"
-        android:inputType="textMultiLine" />
-
-    <Button
-        android:id="@+id/sendQuerySubmit"
+    <TextView
+        android:id="@+id/queryPageMerchantName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/consumerQuery"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="27dp"
-        android:onClick="SendQueryToConsumer"
-        android:text="@string/submit" />
+        android:layout_marginBottom="15dp"
+        android:text="@string/merchant"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/queryPageMerchantAddressBusiness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="@string/services"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
         android:id="@+id/queryPageMerchantDetailsBusiness"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/merchantDetailsHeader"
-        android:layout_below="@+id/merchantDetailsHeader"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/services"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/sendQueryCellPhone"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/queryPageMerchantDetailsBusiness"
-        android:layout_below="@+id/queryPageMerchantDetailsBusiness"
-        android:layout_marginTop="9dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/cellphone"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/queryPageMerchantAddressBusiness"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/sendQueryCellPhone"
-        android:layout_below="@+id/sendQueryCellPhone"
-        android:layout_marginTop="8dp"
-        android:text="@string/services"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <EditText
+        android:id="@+id/consumerQuery"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="11dp"
+        android:ems="10"
+        android:hint="@string/search_service"
+        android:inputType="textMultiLine" >
 
-</RelativeLayout>
+        <requestFocus />
+    </EditText>
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="@string/specialist_can_call_me_for_deltails" />
+
+    <Button
+        android:id="@+id/sendQuerySubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="SendQueryToConsumer"
+        android:text="@string/submit" />
+
+</LinearLayout>

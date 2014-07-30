@@ -68,4 +68,13 @@
         android:onClick="SendQueryToConsumer"
         android:text="@string/submit" />
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/queryPageMerchantName"
+        android:layout_marginRight="28dp"
+        android:src="@drawable/call_icon" />
+
 </RelativeLayout>
