@@ -63,5 +63,22 @@
     <string name="request_completed">Request Completed</string>
     <string name="title_consumerrequest_list">ConsumerRequests</string>
     <string name="title_consumerrequest_detail">ConsumerRequest Detail</string>
+    <string name="title_activity_search">Search Merchant</string>
+    <string name="look">Look up Merchant</string>
+    <string-array name="location_arrays">
+        <item>Gachibowli</item>
+        <item>Kondapur</item>
+        <item>Jubilee Hills</item>
+        <item>Film Nagar</item>
+        <item>Banjara Hills</item>
+        <item>Lingampally</item>
+        <item>Secundarabad</item>
+        <item>Begumpet</item>
+    </string-array>
+    <string-array name="frequent_array">
+        <item>AGC Medicals</item>
+        <item>Rajesh Electric</item>
+        <item>Foot Spa Local</item>
+    </string-array>
 
 </resources>

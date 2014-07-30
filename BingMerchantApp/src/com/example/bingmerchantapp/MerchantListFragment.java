@@ -72,12 +72,12 @@ public class MerchantListFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 
 		// TODO: replace with a real list adapter.
-		ArrayList<Merchant> merchantData = AppUtils.GetAllMerchants();
-		for (Merchant merchant : merchantData) {
+		MerchantListActivity.allMerchantData = AppUtils.GetAllMerchants();
+		for (Merchant merchant : MerchantListActivity.allMerchantData) {
 			Merchant.addItem(merchant);
 		}
 		
-		setListAdapter(new MerchantListItemAdapter(this.getActivity(), 0, 0, merchantData));
+		setListAdapter(new MerchantListItemAdapter(this.getActivity(), 0, 0, MerchantListActivity.allMerchantData));
 	}
 
 	@Override

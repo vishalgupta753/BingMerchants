@@ -289,6 +289,7 @@ public class AppUtils {
 							merchantJson.getString("Tags"),
 							merchantJson.getString("GeoLocation"),
 							false);
+					if(merchant.getServices().contains(MainActivity.Keyword) || MainActivity.Keyword.equals(""))
 					merchantList.add(merchant);
 				}
 			} catch (JSONException e) {

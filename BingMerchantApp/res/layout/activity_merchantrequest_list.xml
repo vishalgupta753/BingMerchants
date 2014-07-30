@@ -1,11 +1,12 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/merchantrequest_list"
-    android:name="com.example.bingmerchantapp.MerchantRequestListFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    tools:context="com.example.bingmerchantapp.MerchantRequestListActivity"
-    tools:layout="@android:layout/list_content" />
 
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    	xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/merchantrequest_list"
+        android:name="com.example.bingmerchantapp.MerchantRequestListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        tools:layout="@android:layout/list_content"
+        tools:context="com.example.bingmerchantapp.MerchantRequestListActivity" >
+        
+    </fragment>

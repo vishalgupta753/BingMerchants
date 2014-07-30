@@ -12,6 +12,7 @@ public class MainActivity extends ActionBarActivity {
 	public static Context context;
 	public static String CurrentUserId;
 	public static String CurrentUserEnv;
+	public static String Keyword = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class MainActivity extends ActionBarActivity {
 		{
 			if(CurrentUserEnv.equals(AppConstants.DefaultAppEnv))
 			{
-				intent = new Intent(this, MerchantListActivity.class);
+				intent = new Intent(this, SearchActivity.class);
 			}
 			else
 			{
