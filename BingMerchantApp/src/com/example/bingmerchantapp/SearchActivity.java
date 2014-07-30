@@ -38,6 +38,10 @@ public class SearchActivity extends Activity {
 
 		// setting list adapter
 		expListView.setAdapter(listAdapter);
+		
+		int count = expListView.getCount();
+		for (int position = 1; position <= count; position++)
+			expListView.expandGroup(position - 1);
 	}
 
 	@Override

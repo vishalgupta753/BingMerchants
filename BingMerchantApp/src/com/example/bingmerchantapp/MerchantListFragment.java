@@ -75,11 +75,14 @@ public class MerchantListFragment extends ListFragment {
 		Merchant.ITEM_MAP.clear();
 		Merchant.ITEMS.clear();
 		MerchantListActivity.allMerchantData = AppUtils.GetAllMerchants();
+		int i = 1;
 		for (Merchant merchant : MerchantListActivity.allMerchantData) {
-			Merchant.addItem(merchant);
+			if (i++ <= 5)
+				Merchant.addItem(merchant);
 		}
-		
-		setListAdapter(new MerchantListItemAdapter(this.getActivity(), 0, 0, Merchant.ITEMS));
+
+		setListAdapter(new MerchantListItemAdapter(this.getActivity(), 0, 0,
+				Merchant.ITEMS));
 	}
 
 	@Override
