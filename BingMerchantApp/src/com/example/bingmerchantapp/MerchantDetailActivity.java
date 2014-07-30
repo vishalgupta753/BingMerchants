@@ -2,9 +2,11 @@ package com.example.bingmerchantapp;
 
 import com.example.bingmerchantapp.data.Merchant;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 
 import android.view.MenuItem;
 import android.view.View;
@@ -75,6 +77,22 @@ public class MerchantDetailActivity extends Activity {
 		if (AppUtils.StringIsNullOrEmpty(consumerQuery) == false)
 			AppUtils.SendQueryToMerchant(merchant, query.getText().toString());
 		
+		new AlertDialog.Builder(this)
+	    .setTitle("Send Query")
+	    .setMessage("Your Query has been successfully saved")
+	    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface dialog, int which) { 
+	        	gotoSearchQueryPage();
+	        }
+	     })
+	    .setIcon(android.R.drawable.ic_dialog_alert)
+	     .show();
+		
+		
+	}
+	
+	public void gotoSearchQueryPage()
+	{
 		Intent intent = new Intent(this, SearchActivity.class);
 		startActivity(intent);
 		finish();
