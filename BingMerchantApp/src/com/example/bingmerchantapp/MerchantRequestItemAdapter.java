@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MerchantRequestItemAdapter extends ArrayAdapter<Message> {
@@ -34,7 +35,10 @@ public class MerchantRequestItemAdapter extends ArrayAdapter<Message> {
 		
 		TextView merchantBusinessName = (TextView) merchantListItemView.findViewById(R.id.merchantBusinessName);
 		TextView merchantBusinessTags = (TextView) merchantListItemView.findViewById(R.id.merchantBusinessTags);
-		
+		ImageView image = (ImageView) merchantListItemView.findViewById(R.id.imageView1);
+		int imageDrawable = AppUtils.getRandomImageInt();
+		image.setImageResource (imageDrawable);
+
 		merchantBusinessName.setText(merchantItem.getConsumer().getName());
 		merchantBusinessTags.setText(merchantItem.getMessage());
 		
