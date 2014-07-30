@@ -72,14 +72,17 @@ public class MerchantRequestListFragment extends ListFragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-
 		// TODO: replace with a real list adapter.
 		ArrayList<Message> merchantData = AppUtils.GetOpenQueriesForMerchant();
+		Message.ITEM_MAP.clear();
+		Message.ITEMS.clear();
 		for (Message merchant : merchantData) {
-			Message.addItem(merchant);
+			if (!merchant.getMessageStatus().equals("c"))
+				Message.addItem(merchant);
 		}
-		
-		setListAdapter(new MerchantRequestItemAdapter(this.getActivity(), 0, 0, merchantData));
+
+		setListAdapter(new MerchantRequestItemAdapter(this.getActivity(), 0, 0,
+				Message.ITEMS));
 	}
 
 	@Override

@@ -90,5 +90,6 @@ public class MerchantRequestDetailActivity extends Activity {
 		}
 		AppUtils.UpdateStatus(message, status);
 		startActivity(new Intent (this, MerchantRequestListActivity.class));
+		finish();
 	}
 }

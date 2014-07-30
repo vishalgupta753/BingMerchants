@@ -3,6 +3,8 @@ package com.example.bingmerchantapp;
 import com.example.bingmerchantapp.data.Consumer;
 import com.example.bingmerchantapp.data.Merchant;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -92,6 +94,29 @@ public class MerchantSignup extends ActionBarActivity {
 		getMenuInflater().inflate(R.menu.merchant_signup, menu);
 		return true;
 	}
+	
+	@Override
+	public void onBackPressed()
+	{
+		new AlertDialog.Builder(this)
+	    .setTitle("Exit App")
+	    .setMessage("Are you sure you want to exit?")
+	    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface dialog, int which) { 
+	        	Intent intent = new Intent(Intent.ACTION_MAIN);
+	        	intent.addCategory(Intent.CATEGORY_HOME);
+	        	intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	        	startActivity(intent);
+	        }
+	     })
+	    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface dialog, int which) { 
+	            // do nothing
+	        }
+	     })
+	    .setIcon(android.R.drawable.ic_dialog_alert)
+	     .show();
+	} 
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -161,5 +186,6 @@ public class MerchantSignup extends ActionBarActivity {
 		
 		AppUtils.SaveLocalUserId(MainActivity.CurrentUserId, MainActivity.CurrentUserEnv);
 		startActivity(intent);
+		finish();
 	}
 }

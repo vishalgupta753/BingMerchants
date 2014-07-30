@@ -27,7 +27,7 @@ public class MerchantRequestItemAdapter extends ArrayAdapter<Message> {
 		LayoutInflater inflater = (LayoutInflater)mContext 
 		        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		if(merchantListItemView == null){
-			merchantListItemView = inflater.inflate(R.layout.entity_list_view, parent, false);
+			merchantListItemView = inflater.inflate(R.layout.query_list_view, parent, false);
 		}
 		
 		Message merchantItem = getItem(position);
