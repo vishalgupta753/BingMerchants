@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
+import com.example.bingmerchantapp.data.Merchant;
 import com.example.bingmerchantapp.data.Message;
 import com.example.bingmerchantapp.dummy.DummyContent;
 
@@ -121,7 +122,7 @@ public class ConsumerRequestListFragment extends ListFragment {
 
 		// Notify the active callbacks interface (the activity, if the
 		// fragment is attached to one) that an item has been selected.
-		mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+		mCallbacks.onItemSelected(Message.ITEMS.get(position).getMessageId());
 	}
 
 	@Override

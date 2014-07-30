@@ -14,37 +14,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true" 
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/queryPageMerchantName"
+            android:id="@+id/customerRequestMerchantName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/merchant"
             android:textAppearance="?android:attr/textAppearanceLarge" />
+        <TextView
+            android:id="@+id/customerRequestMerchantBusiness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/merchant"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/merchantCellPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/merchantDetailsHeader"
-        android:layout_alignRight="@+id/merchantDetailsHeader"
-        android:layout_below="@+id/merchantDetailsHeader"
-        android:layout_marginTop="18dp"
-        android:text="@string/cellphone"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/merchantStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/merchantCellPhone"
-        android:layout_alignRight="@+id/merchantCellPhone"
-        android:layout_below="@+id/merchantCellPhone"
-        android:layout_marginTop="18dp"
-        android:text="@string/services"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <LinearLayout
         android:id="@+id/merchantRequestResponseButtons"
@@ -67,5 +53,25 @@
             android:src="@drawable/like" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/merchantCellPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/merchantDetailsHeader"
+        android:layout_below="@+id/merchantDetailsHeader"
+        android:text="@string/cellphone"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/merchantStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/merchantCellPhone"
+        android:layout_below="@+id/merchantCellPhone"
+        android:text="@string/services"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="15sp" />
 
 </RelativeLayout>

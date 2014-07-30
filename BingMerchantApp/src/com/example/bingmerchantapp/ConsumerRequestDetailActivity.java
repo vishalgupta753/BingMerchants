@@ -1,5 +1,7 @@
 package com.example.bingmerchantapp;
 
+import com.example.bingmerchantapp.data.Message;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
@@ -17,6 +19,7 @@ import android.view.MenuItem;
  */
 public class ConsumerRequestDetailActivity extends Activity {
 
+	public static Message message;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.bingmerchantapp.data.Merchant;
+import com.example.bingmerchantapp.data.Message;
 import com.example.bingmerchantapp.dummy.DummyContent;
 
 /**
@@ -23,7 +26,7 @@ public class ConsumerRequestDetailFragment extends Fragment {
 	/**
 	 * The dummy content this fragment is presenting.
 	 */
-	private DummyContent.DummyItem mItem;
+	private Message mItem;
 
 	/**
 	 * Mandatory empty constructor for the fragment manager to instantiate the
@@ -40,7 +43,7 @@ public class ConsumerRequestDetailFragment extends Fragment {
 			// Load the dummy content specified by the fragment
 			// arguments. In a real-world scenario, use a Loader
 			// to load content from a content provider.
-			mItem = DummyContent.ITEM_MAP.get(getArguments().getString(
+			mItem = Message.ITEM_MAP.get(getArguments().getString(
 					ARG_ITEM_ID));
 		}
 	}
@@ -53,10 +56,36 @@ public class ConsumerRequestDetailFragment extends Fragment {
 
 		// Show the dummy content as text in a TextView.
 		if (mItem != null) {
-//			((TextView) rootView.findViewById(R.id.consumerrequest_detail))
-//					.setText(mItem.content);
+				((TextView) rootView.findViewById(R.id.customerRequestMerchantName))
+				.setText(mItem.getMerchant().getName());
+				((TextView) rootView.findViewById(R.id.customerRequestMerchantBusiness))
+				.setText(mItem.getMerchant().toString());
+				((TextView) rootView.findViewById(R.id.merchantCellPhone))
+				.setText(mItem.getMerchant().getPhone());
+				
+				String  messageStatus = "";
+				if (mItem.getMessageStatus().equals("o"))
+				{
+					messageStatus = "Requested business has not reverted back";
+				}
+				else if (mItem.getMessageStatus().equals("p"))
+				{
+					messageStatus = "Your request has been accepted";
+				}
+				else if (mItem.getMessageStatus().equals("d"))
+				{
+					messageStatus = "Your request has been declined";
+				}
+				else if (mItem.getMessageStatus().equals("c"))
+				{
+					messageStatus = "Your request has been completed";
+				}
+				
+				((TextView) rootView.findViewById(R.id.merchantStatus))
+				.setText(messageStatus);
+				
+				ConsumerRequestDetailActivity.message = mItem;
 		}
-
 		return rootView;
 	}
 }
