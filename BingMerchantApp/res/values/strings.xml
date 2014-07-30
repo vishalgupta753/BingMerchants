@@ -84,5 +84,6 @@
         <string name="feedback_button">Feedback Button</string>
         <string name="send_feedback">Send Feedback</string>
         <string name="specialist_can_call_me_for_deltails">Specialist can call me for deltails</string>
+        <string name="call_button">Call Button</string>
 
 </resources>
