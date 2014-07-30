@@ -59,7 +59,9 @@ public class MerchantDetailFragment extends Fragment {
 					.setText(mItem.getName());
 			((TextView) rootView.findViewById(R.id.sendQueryCellPhone))
 			.setText(mItem.getPhone());
-			((TextView) rootView.findViewById(R.id.queryPageMerchantDetails))
+			((TextView) rootView.findViewById(R.id.queryPageMerchantDetailsBusiness))
+			.setText(mItem.getBusinessName());
+			((TextView) rootView.findViewById(R.id.queryPageMerchantAddressBusiness))
 			.setText(mItem.getAddress());
 			MerchantDetailActivity.merchant = mItem;
 		}
