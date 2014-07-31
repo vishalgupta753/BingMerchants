@@ -1,4 +1,11 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout 
     android:id="@+id/merchantDetailsHeader"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,7 +38,11 @@
         android:text="@string/services"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
-<LinearLayout android:orientation="horizontal">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
     <Button
         android:id="@+id/button1"
         style="?android:attr/buttonStyleSmall"
@@ -53,7 +64,7 @@
     <EditText
         android:id="@+id/consumerQuery"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="101dp"
         android:layout_marginBottom="11dp"
         android:ems="10"
         android:hint="@string/search_service"
@@ -75,5 +86,6 @@
         android:layout_height="wrap_content"
         android:onClick="SendQueryToConsumer"
         android:text="@string/submit" />
+    </LinearLayout>
+    </ScrollView>
 
-</LinearLayout>
