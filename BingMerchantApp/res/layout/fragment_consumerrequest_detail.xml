@@ -61,6 +61,7 @@
         android:layout_below="@+id/merchantCellPhone"
         android:text="@string/services"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/blue"
         android:textSize="15sp" />
 
     <CheckBox

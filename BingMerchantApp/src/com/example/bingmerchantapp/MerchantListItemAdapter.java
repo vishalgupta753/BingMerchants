@@ -1,6 +1,7 @@
 package com.example.bingmerchantapp;
 
 import java.util.List;
+import java.util.Random;
 
 import com.example.bingmerchantapp.data.Merchant;
 
@@ -41,6 +42,18 @@ public class MerchantListItemAdapter extends ArrayAdapter<Merchant> {
 
 		merchantBusinessName.setText(merchantItem.getBusinessName());
 		merchantBusinessTags.setText(merchantItem.getServices());
+		TextView count = (TextView) merchantListItemView.findViewById(R.id.recommendedCount1);
+		Random rand = new Random();
+		int randomNum = rand.nextInt(10) + 1;
+	    count.setText(String.valueOf(randomNum));
+	    Boolean favVisibility = false;
+	    if (randomNum % 2 == 0)
+	    	favVisibility = true;
+	    ImageView fav = (ImageView) merchantListItemView.findViewById(R.id.favorite);
+	    if (!favVisibility)
+	    	fav.setVisibility(View.INVISIBLE);
+		
+	    
 		
 		return merchantListItemView;
 	}
